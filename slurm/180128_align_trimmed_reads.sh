@@ -27,7 +27,7 @@ cd ~/data/xfeng17/ref_genome/dm
 
 echo "Aligning to fly genome..."
 
-~/scratch/dnase_pipeline/dnanexus/dnase-align-bwa-se/resources/usr/bin/dnase_align_bwa_se.sh \
+~/data/xfeng17/code/dnase_pipeline/dnanexus/dnase-align-bwa-se/resources/usr/bin/dnase_align_bwa_se.sh \
 dm6_bwa_index.tgz \
 ~/data/xfeng17/dnase/dm/oregon/ENCFF005BHD_trimmed.fastq \
 8 \
