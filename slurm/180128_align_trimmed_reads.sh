@@ -32,6 +32,6 @@ dm6_bwa_index.tgz \
 ~/data/xfeng17/dnase/dm/oregon/ENCFF005BHD_trimmed.fastq \
 8 \
 ~/data/xfeng17/dnase/dm/oregon/ENCFF005BHD_trimmed \
-> ENCFF005BHD_trimmmed_align.log
+> ~/data/xfeng17/dnase/dm/oregon/ENCFF005BHD_trimmmed_align_2.log
 
 echo "Done"
