@@ -1,0 +1,102 @@
+{
+  "name": "dnase-filter-pe",
+  "title": "Merge and filter pe bams (v2.0.6)",
+  "summary": "Merge and filter bams (paired-end) for the ENCODE DNase-seq pipeline",
+  "dxapi": "1.0.0",
+  "version": "2.0.6",
+  "authorizedUsers": [],
+  "inputSpec": [
+    {
+      "name": "bam_set",
+      "label": "One or more tech_rep level bam files to merge",
+      "class": "array:file",
+      "optional": false,
+      "patterns": ["*_bwa_techrep.bam", "*_bwa.bam"]
+    },
+    {
+      "name": "map_thresh",
+      "label": "Map threshold (default 10).",
+      "class": "int",
+      "optional": true,
+      "default": 10
+    },
+    {
+      "name": "umi",
+      "label": "UMI ids in reads.",
+      "class": "string",
+      "choices": [ "yes", "no", "discover" ],
+      "default": "discover",
+      "optional": true
+    },
+    {
+      "name": "nthreads",
+      "label": "Number of threads to use",
+      "class": "int",
+      "optional": true,
+      "default": 4
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "bam_filtered",
+      "label": "Filtered bam file",
+      "class": "file",
+      "patterns": ["*_filtered.bam"]
+    },
+    {
+      "name": "bam_filtered_qc",
+      "label": "Filtered bam qc: samtools flagstat/stats results",
+      "class": "file",
+      "patterns": ["*_filtered_qc.txt"]
+    },
+    {
+      "name": "bam_marked",
+      "label": "Marked but not filtered bam file",
+      "class": "file",
+      "optional": true,
+      "patterns": ["*_marked.bam"]
+    },
+    {
+      "name": "prefiltered_all_reads",
+      "label": "Count of all reads before filtering",
+      "optional": true,
+      "class": "string"
+    },
+    {
+      "name": "prefiltered_mapped_reads",
+      "label": "Count of mapped reads before filtering",
+      "optional": true,
+      "class": "string"
+    },
+    {
+      "name": "filtered_mapped_reads",
+      "label": "Count of mapped reads in the filtered bam",
+      "optional": true,
+      "class": "string"
+    },
+    {
+      "name": "metadata",
+      "label": "JSON formatted string of metadata",
+      "class": "string"
+    }
+  ],
+  "runSpec": {
+    "interpreter": "bash",
+    "file": "src/dnase-filter-pe.sh",
+    "distribution": "Ubuntu", "release": "12.04",
+    "systemRequirements": { "main": { "instanceType": "mem3_hdd2_x4" } },
+    "execDepends": [
+        { "name": "gawk" },
+        { "name": "openjdk-8-jdk" },
+        { "name": "pysam", "package_manager": "pip", "version": "0.9.0"}
+    ]
+  },
+  "access": {
+    "network": [
+      "*"
+    ]
+  },
+  "categories": [
+    "ENCODE"
+  ]
+}
