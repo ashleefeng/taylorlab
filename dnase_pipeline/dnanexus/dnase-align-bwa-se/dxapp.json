@@ -1,0 +1,96 @@
+{
+  "name": "dnase-align-bwa-se",
+  "title": "Align with bwa - se (v1.2.1)",
+  "summary": "Alignment by bwa of single-end fastq for the ENCODE DNase-seq pipeline",
+  "dxapi": "1.0.0",
+  "version": "1.2.1",
+  "authorizedUsers": [],
+  "inputSpec": [
+    {
+      "name": "reads",
+      "label": "Single-end fastq file(s) (gzipped)",
+      "class": "array:file",
+      "optional": false,
+      "patterns": ["*.fq.gz","*.fastq.gz"]
+    },
+    {
+      "name": "bwa_index",
+      "label": "BWA generated index of a genome reference file",
+      "class": "file",
+      "optional": false,
+      "patterns": ["*_bwa_index.tar.gz","*_bwa_index.tgz"]
+    },
+    {
+      "name": "barcode",
+      "label": "Barcode of fastqs.",
+      "class": "string",
+      "default": "unspecified",
+      "optional": true
+    },
+    {
+      "name": "trim_len",
+      "label": "Trim reads to length (default: 0 means no trimming)",
+      "class": "int",
+      "optional": true,
+      "default": 0
+    },
+    {
+      "name": "nthreads",
+      "label": "Number of threads to use",
+      "class": "int",
+      "optional": true,
+      "default": 4
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "bam_bwa",
+      "label": "Alignment bam file",
+      "class": "file",
+      "patterns": ["*_bwa_techrep.bam"]
+    },
+    {
+      "name": "bam_qc",
+      "label": "bam qc: samtools flagstat and edwBamStats results",
+      "class": "file",
+      "patterns": ["*_bwa_techrep_qc.txt"]
+    },
+    {
+      "name": "all_reads",
+      "label": "Count of all reads in the bam",
+      "optional": true,
+      "class": "string"
+    },
+    {
+      "name": "mapped_reads",
+      "label": "Count of mapped reads in the bam",
+      "optional": true,
+      "class": "string"
+    },
+    {
+      "name": "metadata",
+      "label": "JSON formatted string of metadata",
+      "class": "string"
+    }
+  ],
+  "runSpec": {
+    "distribution": "Ubuntu",
+    "release": "12.04",
+    "interpreter": "bash",
+    "file": "src/dnase-align-bwa-se.sh",
+    "execDepends": [
+        {"name": "cutadapt",
+         "package_manager": "pip",
+         "version": "1.12"}
+    ],
+    "systemRequirements": { "main": { "instanceType": "mem3_hdd2_x4" } }
+  },
+  "access": {
+    "network": [
+      "*"
+    ]
+  },
+  "categories": [
+    "ENCODE"
+  ]
+}

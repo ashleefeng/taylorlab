@@ -1,0 +1,78 @@
+{
+  "name": "dnase-index-bwa",
+  "title": "Index genome with bwa for DNase (v2.0.3)",
+  "summary": "Prepare reference genome index for BWA used in the ENCODE dnase-seq pipeline",
+  "dxapi": "1.0.0",
+  "version": "2.0.3",
+  "authorizedUsers": [],
+  "inputSpec": [
+    {
+      "name": "reference",
+      "label": "Reference genome (.fa.gz)",
+      "class": "file",
+      "optional": false,
+      "patterns": ["*.fasta.gz", "*.fa.gz"]
+    },
+    {
+      "name": "genome",
+      "label": "Genome assembly",
+      "class": "string",
+      "optional": true,
+      "default": "",
+      "patterns": ["hg19", "hg38", "mm10"]
+    },
+    {
+      "name": "mappable_regions",
+      "label": "Mappable regions (.starch)",
+      "class": "file",
+      "optional": true,
+      "patterns": ["*.mappable_only.starch", "*.mappable_only.bed.gz"]
+    },
+    {
+      "name": "blacklist",
+      "label": "Blacklisted regions (.bed.gz)",
+      "class": "file",
+      "optional": true,
+      "patterns": ["*.bed.gz", "*.bed"]
+    },
+    {
+      "name": "skip_indexing",
+      "label": "Just build the mappablility reference and skip indexing.",
+      "class": "boolean",
+      "default": false,
+      "optional": true
+   }
+  ],
+  "outputSpec": [
+    {
+      "name": "bwa_index",
+      "label": "Reference index index for BWA",
+      "class": "file",
+      "optional": true,
+      "patterns": ["*_bwa_index.tgz"]
+    },
+    {
+      "name": "mappable_tar",
+      "label": "Hotspot2 mappable regions",
+      "class": "file",
+      "optional": true,
+      "patterns": ["*_hotspot2_v2.0_mappable.tgz"]
+    }
+  ],
+  "runSpec": {
+    "distribution": "Ubuntu",
+    "release": "12.04",
+    "interpreter": "bash",
+    "file": "src/dnase-index-bwa.sh",
+    "systemRequirements": {  "main": { "instanceType": "mem3_hdd2_x4" } },
+    "execDepends": [ { "name": "gawk" } ]
+  },
+  "access": {
+    "network": [
+      "*"
+    ]
+  },
+  "categories": [
+    "ENCODE"
+  ]
+}
