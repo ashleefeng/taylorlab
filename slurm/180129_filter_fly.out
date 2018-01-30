@@ -1,0 +1,72 @@
+Filtering fly alignments...
++ samtools sort -@ 16 -m 4G -O bam -T sorted ENCFF005BHD_trimmed.bam
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
++ set +x
++ java -jar ./picard.jar MarkDuplicates INPUT=sorted.bam OUTPUT=ENCFF005BHD_trimmed_marked.bam METRICS_FILE=ENCFF005BHD_trimmed_filtered_dup_qc.txt ASSUME_SORTED=true VALIDATION_STRINGENCY=SILENT 'READ_NAME_REGEX=[a-zA-Z0-9]+:[0-9]+:[a-zA-Z0-9]+:[0-9]+:([0-9]+):([0-9]+):([0-9]+).*'
+16:03:47.702 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/work-zfs/jtayl139/xfeng17/dnase/dm/oregon/picard.jar!/com/intel/gkl/native/libgkl_compression.so
+[Mon Jan 29 16:03:47 EST 2018] MarkDuplicates INPUT=[sorted.bam] OUTPUT=ENCFF005BHD_trimmed_marked.bam METRICS_FILE=ENCFF005BHD_trimmed_filtered_dup_qc.txt ASSUME_SORTED=true READ_NAME_REGEX=[a-zA-Z0-9]+:[0-9]+:[a-zA-Z0-9]+:[0-9]+:([0-9]+):([0-9]+):([0-9]+).* VALIDATION_STRINGENCY=SILENT    MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP=50000 MAX_FILE_HANDLES_FOR_READ_ENDS_MAP=8000 SORTING_COLLECTION_SIZE_RATIO=0.25 TAG_DUPLICATE_SET_MEMBERS=false REMOVE_SEQUENCING_DUPLICATES=false TAGGING_POLICY=DontTag CLEAR_DT=true ADD_PG_TAG_TO_READS=true REMOVE_DUPLICATES=false DUPLICATE_SCORING_STRATEGY=SUM_OF_BASE_QUALITIES PROGRAM_RECORD_ID=MarkDuplicates PROGRAM_GROUP_NAME=MarkDuplicates OPTICAL_DUPLICATE_PIXEL_DISTANCE=100 MAX_OPTICAL_DUPLICATE_SET_SIZE=300000 VERBOSITY=INFO QUIET=false COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 CREATE_INDEX=false CREATE_MD5_FILE=false GA4GH_CLIENT_SECRETS=client_secrets.json USE_JDK_DEFLATER=false USE_JDK_INFLATER=false
+[Mon Jan 29 16:03:47 EST 2018] Executing as xfeng17@jhu.edu@bigmem0033 on Linux 2.6.32-573.22.1.el6.x86_64 amd64; Java HotSpot(TM) 64-Bit Server VM 1.8.0_112-b15; Deflater: Intel; Inflater: Intel; Picard version: 2.17.6-SNAPSHOT
+INFO	2018-01-29 16:03:47	MarkDuplicates	Start of doWork freeMemory: 2038396200; totalMemory: 2058354688; maxMemory: 28631367680
+INFO	2018-01-29 16:03:47	MarkDuplicates	Reading input file and constructing read end information.
+INFO	2018-01-29 16:03:47	MarkDuplicates	Will retain up to 103736839 data points before spilling to disk.
+WARNING	2018-01-29 16:03:48	AbstractOpticalDuplicateFinderCommandLineProgram	READ_NAME_REGEX '[a-zA-Z0-9]+:[0-9]+:[a-zA-Z0-9]+:[0-9]+:([0-9]+):([0-9]+):([0-9]+).*' did not match read name 'SOLEXA-1GA-2_0040_FC6228W:6:83:10305:3894#0'.  Your regex may not be correct.  Note that this message will not be emitted again even if other read names do not match the regex.
+INFO	2018-01-29 16:03:53	MarkDuplicates	Read     1,000,000 records.  Elapsed time: 00:00:05s.  Time for last 1,000,000:    5s.  Last read position: chr2L:9,828,160
+INFO	2018-01-29 16:03:53	MarkDuplicates	Tracking 0 as yet unmatched pairs. 0 records in RAM.
+INFO	2018-01-29 16:03:59	MarkDuplicates	Read     2,000,000 records.  Elapsed time: 00:00:11s.  Time for last 1,000,000:    5s.  Last read position: chr2L:20,134,818
+INFO	2018-01-29 16:03:59	MarkDuplicates	Tracking 0 as yet unmatched pairs. 0 records in RAM.
+INFO	2018-01-29 16:04:06	MarkDuplicates	Read     3,000,000 records.  Elapsed time: 00:00:17s.  Time for last 1,000,000:    6s.  Last read position: chr2R:2,605,045
+INFO	2018-01-29 16:04:06	MarkDuplicates	Tracking 0 as yet unmatched pairs. 0 records in RAM.
+INFO	2018-01-29 16:04:08	MarkDuplicates	Read     4,000,000 records.  Elapsed time: 00:00:20s.  Time for last 1,000,000:    2s.  Last read position: chr2R:11,084,065
+INFO	2018-01-29 16:04:08	MarkDuplicates	Tracking 0 as yet unmatched pairs. 0 records in RAM.
+INFO	2018-01-29 16:04:13	MarkDuplicates	Read     5,000,000 records.  Elapsed time: 00:00:25s.  Time for last 1,000,000:    5s.  Last read position: chr2R:21,575,421
+INFO	2018-01-29 16:04:13	MarkDuplicates	Tracking 0 as yet unmatched pairs. 0 records in RAM.
+INFO	2018-01-29 16:04:16	MarkDuplicates	Read     6,000,000 records.  Elapsed time: 00:00:28s.  Time for last 1,000,000:    2s.  Last read position: chr3L:5,660,929
+INFO	2018-01-29 16:04:16	MarkDuplicates	Tracking 0 as yet unmatched pairs. 0 records in RAM.
+INFO	2018-01-29 16:04:24	MarkDuplicates	Read     7,000,000 records.  Elapsed time: 00:00:36s.  Time for last 1,000,000:    8s.  Last read position: chr3L:17,242,601
+INFO	2018-01-29 16:04:24	MarkDuplicates	Tracking 0 as yet unmatched pairs. 0 records in RAM.
+INFO	2018-01-29 16:04:27	MarkDuplicates	Read     8,000,000 records.  Elapsed time: 00:00:38s.  Time for last 1,000,000:    2s.  Last read position: chr3L:27,482,563
+INFO	2018-01-29 16:04:27	MarkDuplicates	Tracking 0 as yet unmatched pairs. 0 records in RAM.
+INFO	2018-01-29 16:04:35	MarkDuplicates	Read     9,000,000 records.  Elapsed time: 00:00:47s.  Time for last 1,000,000:    8s.  Last read position: chr3R:8,900,049
+INFO	2018-01-29 16:04:35	MarkDuplicates	Tracking 0 as yet unmatched pairs. 0 records in RAM.
+INFO	2018-01-29 16:04:37	MarkDuplicates	Read    10,000,000 records.  Elapsed time: 00:00:49s.  Time for last 1,000,000:    2s.  Last read position: chr3R:18,891,017
+INFO	2018-01-29 16:04:37	MarkDuplicates	Tracking 0 as yet unmatched pairs. 0 records in RAM.
+INFO	2018-01-29 16:04:39	MarkDuplicates	Read    11,000,000 records.  Elapsed time: 00:00:51s.  Time for last 1,000,000:    2s.  Last read position: chr3R:29,715,455
+INFO	2018-01-29 16:04:39	MarkDuplicates	Tracking 0 as yet unmatched pairs. 0 records in RAM.
+INFO	2018-01-29 16:04:42	MarkDuplicates	Read    12,000,000 records.  Elapsed time: 00:00:54s.  Time for last 1,000,000:    3s.  Last read position: chrUn_DS485255v1:622
+INFO	2018-01-29 16:04:42	MarkDuplicates	Tracking 0 as yet unmatched pairs. 0 records in RAM.
+INFO	2018-01-29 16:04:52	MarkDuplicates	Read    13,000,000 records.  Elapsed time: 00:01:04s.  Time for last 1,000,000:    9s.  Last read position: chrX:2,064,805
+INFO	2018-01-29 16:04:52	MarkDuplicates	Tracking 0 as yet unmatched pairs. 0 records in RAM.
+INFO	2018-01-29 16:04:54	MarkDuplicates	Read    14,000,000 records.  Elapsed time: 00:01:06s.  Time for last 1,000,000:    2s.  Last read position: chrX:18,404,304
+INFO	2018-01-29 16:04:54	MarkDuplicates	Tracking 0 as yet unmatched pairs. 0 records in RAM.
+INFO	2018-01-29 16:04:56	MarkDuplicates	Read    15,000,000 records.  Elapsed time: 00:01:08s.  Time for last 1,000,000:    2s.  Last read position: chrX_DS484839v1_random:273
+INFO	2018-01-29 16:04:56	MarkDuplicates	Tracking 0 as yet unmatched pairs. 0 records in RAM.
+INFO	2018-01-29 16:04:58	MarkDuplicates	Read 15591076 records. 0 pairs never matched.
+INFO	2018-01-29 16:05:08	MarkDuplicates	After buildSortedReadEndLists freeMemory: 10461921328; totalMemory: 12613844992; maxMemory: 28631367680
+INFO	2018-01-29 16:05:08	MarkDuplicates	Will retain up to 894730240 duplicate indices before spilling to disk.
+INFO	2018-01-29 16:05:09	MarkDuplicates	Traversing read pair information and detecting duplicates.
+INFO	2018-01-29 16:05:09	MarkDuplicates	Traversing fragment information and detecting duplicates.
+INFO	2018-01-29 16:05:11	MarkDuplicates	Sorting list of duplicate records.
+INFO	2018-01-29 16:05:11	MarkDuplicates	After generateDuplicateIndexes freeMemory: 5258550264; totalMemory: 12613844992; maxMemory: 28631367680
+INFO	2018-01-29 16:05:11	MarkDuplicates	Marking 3468654 records as duplicates.
+INFO	2018-01-29 16:05:11	MarkDuplicates	Found 0 optical duplicate clusters.
+INFO	2018-01-29 16:05:11	MarkDuplicates	Reads are assumed to be ordered by: coordinate
+INFO	2018-01-29 16:06:28	MarkDuplicates	Written    10,000,000 records.  Elapsed time: 00:01:16s.  Time for last 10,000,000:   76s.  Last read position: chr3R:18,891,017
+INFO	2018-01-29 16:07:06	MarkDuplicates	Before output close freeMemory: 20870982408; totalMemory: 21050163200; maxMemory: 28631367680
+INFO	2018-01-29 16:07:06	MarkDuplicates	After output close freeMemory: 20462562056; totalMemory: 20641742848; maxMemory: 28631367680
+[Mon Jan 29 16:07:06 EST 2018] picard.sam.markduplicates.MarkDuplicates done. Elapsed time: 3.32 minutes.
+Runtime.totalMemory()=20641742848
+
+real	3m21.736s
+user	16m52.576s
+sys	0m14.427s
++ set +x
++ samtools view -F 512 -q 10 -b ENCFF005BHD_trimmed_marked.bam
++ set +x
++ samtools flagstat ENCFF005BHD_trimmed.bam
++ samtools flagstat ENCFF005BHD_trimmed_filtered.bam
++ samtools stats ENCFF005BHD_trimmed_filtered.bam
++ head -3 ENCFF005BHD_trimmed_filtered_samstats.txt
++ grep '^SN' ENCFF005BHD_trimmed_filtered_samstats.txt
++ cut -f 2-
++ set +x
+Done.
