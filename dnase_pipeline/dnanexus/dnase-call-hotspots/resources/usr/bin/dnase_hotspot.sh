@@ -27,7 +27,8 @@ set +x
 
 echo "-- Running hotspot2.sh..."
 set -x
-hotspot2.sh -c chrom_sizes.bed -C center_sites.starch -M mappable_target.starch $bam_file out/
+#hotspot2.sh -c chrom_sizes.bed -C center_sites.starch -M mappable_target.starch $bam_file out/
+hotspot2.sh -c chrom_sizes.bed -C center_sites.starch $bam_file out/
 set +x
 
 echo "-- hotspot2.sh out/..."

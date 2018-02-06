@@ -1,0 +1,24 @@
++ set +x
++ set +x
++ set +x
++ set +x
++ set +x
++ set +x
++ grep '^chr' dm_chrom_sizes.bed
++ sort-bed -
++ awk '{printf "%s\t%s\t%s\t%s\n",$1,$2,$3,$1}'
++ set +x
++ '[' -e '*.blacklist.bed' ']'
++ set -x
++ touch /home-4/xfeng17@jhu.edu/data/xfeng17/hotspot/hotspot-distr/data/Satellite.dm6.bed
++ set +x
++ mkdir tmp2
++ mkdir out2
++ cp dm6.chromInfo.bed /home-4/xfeng17@jhu.edu/data/xfeng17/hotspot/hotspot-distr/data/
++ hotspot.py -o /home-4/xfeng17@jhu.edu/data/xfeng17/hotspot/hotspot-distr/ /home-4/xfeng17@jhu.edu/data/xfeng17/dnase/dm/oregon/ENCFF005BHD_trimmed_filtered_10059570_sample.bam dm6 DNase-seq 36 tmp2 out2
+Traceback (most recent call last):
+  File "/home-4/xfeng17@jhu.edu/data/xfeng17/bin/hotspot.py", line 218, in <module>
+    main()
+  File "/home-4/xfeng17@jhu.edu/data/xfeng17/bin/hotspot.py", line 34, in main
+    raise ValueError('genome: ' + args.genome + ' is not a valid genome, must be one of: ' + ','.join(genomes))
+ValueError: genome: dm6 is not a valid genome, must be one of: hg38,hg19,mm9,mm10
