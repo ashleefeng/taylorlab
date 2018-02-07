@@ -309,6 +309,7 @@ if [ "" == "$pkouts" ]; then
 else
   log "Finalizing peaks..."
   cat $pkouts \
+    | sort-bed \
     | bedmap --echo --skip-unmapped --sweep-all --fraction-either 0.25 - "$hotspots" \
     | starch - \
       >"$pk"
