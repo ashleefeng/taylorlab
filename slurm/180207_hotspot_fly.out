@@ -1,0 +1,127 @@
+Runing dnase_hotspot.sh on dm alignments...
++ tar -xzf dm6_bwa_index.tgz
++ set +x
++ hotspot2.sh -c chrom_sizes.bed -C center_sites.starch /home-4/xfeng17@jhu.edu/data/xfeng17/dnase/dm/oregon/ENCFF005BHD_trimmed_filtered.bam out/
++ CHROM_SIZES=
++ CENTER_SITES=
++ MAPPABLE_REGIONS=
++ SITE_NEIGHBORHOOD_HALF_WINDOW_SIZE=100
++ BACKGROUND_WINDOW_SIZE=50001
++ MIN_HOTSPOT_WIDTH=50
++ HOTSPOT_FDR_THRESHOLD=0.05
++ CALL_THRESHOLD=0.05
++ SEED=22303
++ WRITE_PVALS=
++ SMOOTHING_PARAM=
++ getopts hc:C:M:e:f:F:m:n:p:s:S:w:P opt
++ case "$opt" in
++ CHROM_SIZES=chrom_sizes.bed
++ getopts hc:C:M:e:f:F:m:n:p:s:S:w:P opt
++ case "$opt" in
++ CENTER_SITES=center_sites.starch
++ getopts hc:C:M:e:f:F:m:n:p:s:S:w:P opt
++ shift 4
++ '[' chrom_sizes.bed == '' ']'
++ '[' '!' -s chrom_sizes.bed ']'
++ '[' center_sites.starch == '' ']'
++ '[' '!' -s center_sites.starch ']'
++ '[' '' '!=' '' ']'
++ awk '{exit $1>$2?0:1}'
++ [[ -z /home-4/xfeng17@jhu.edu/data/xfeng17/dnase/dm/oregon/ENCFF005BHD_trimmed_filtered.bam ]]
++ [[ -z out/ ]]
++ BAM=/home-4/xfeng17@jhu.edu/data/xfeng17/dnase/dm/oregon/ENCFF005BHD_trimmed_filtered.bam
++ OUTDIR=out/
++ log 'Checking system for required executables...'
+++ date '+%Y-%m-%d %H:%M:%S'
++ echo -e '2018-02-07 11:03:15\tChecking system for required executables...'
++ require_exes modwt bedGraphToBigWig bedmap samtools hotspot2_part1 hotspot2_part2
++ for x in '"$@"'
++ which modwt
++ for x in '"$@"'
++ which bedGraphToBigWig
++ for x in '"$@"'
++ which bedmap
++ for x in '"$@"'
++ which samtools
++ for x in '"$@"'
++ which hotspot2_part1
++ for x in '"$@"'
++ which hotspot2_part2
+++ which modwt
++ WAVELETS_EXE=/home-4/xfeng17@jhu.edu/data/xfeng17/bin/modwt
+++ dirname /home-4/xfeng17@jhu.edu/data/xfeng17/bin/hotspot2.sh
++ CUTCOUNT_EXE=/home-4/xfeng17@jhu.edu/data/xfeng17/bin/cutcounts.bash
+++ dirname /home-4/xfeng17@jhu.edu/data/xfeng17/bin/hotspot2.sh
++ DENSPK_EXE=/home-4/xfeng17@jhu.edu/data/xfeng17/bin/density-peaks.bash
+++ dirname /home-4/xfeng17@jhu.edu/data/xfeng17/bin/hotspot2.sh
++ MERGE_EXE=/home-4/xfeng17@jhu.edu/data/xfeng17/bin/hsmerge.sh
++ HOTSPOT_EXE1=hotspot2_part1
++ HOTSPOT_EXE2=hotspot2_part2
+++ which mawk
++ AWK_EXE=/home-4/xfeng17@jhu.edu/data/xfeng17/bin/mawk
++ mkdir -p out/
+++ basename /home-4/xfeng17@jhu.edu/data/xfeng17/dnase/dm/oregon/ENCFF005BHD_trimmed_filtered.bam .bam
++ base=out//ENCFF005BHD_trimmed_filtered
++ HOTSPOT_OUTFILE=out//ENCFF005BHD_trimmed_filtered.hotspots.fdr0.05.starch
++ CUTCOUNTS=out//ENCFF005BHD_trimmed_filtered.cutcounts.starch
++ FRAGMENTS_OUTFILE=out//ENCFF005BHD_trimmed_filtered.fragments.sorted.starch
++ TOTALCUTS_OUTFILE=out//ENCFF005BHD_trimmed_filtered.cleavage.total
++ OUTFILE=out//ENCFF005BHD_trimmed_filtered.allcalls.starch
++ DENSITY_OUTFILE=out//ENCFF005BHD_trimmed_filtered.density.starch
++ DENSITY_BW=out//ENCFF005BHD_trimmed_filtered.density.bw
++ PEAKS_OUTFILE=out//ENCFF005BHD_trimmed_filtered.peaks.starch
++ SPOT_SCORE_OUTFILE=out//ENCFF005BHD_trimmed_filtered.SPOT.txt
++ clean=0
++ [[ -z /tmp ]]
++ TEMP_CHROM_MAPPING_HOTSPOT2PART1=/tmp/temp_chrom_mapping_hotspot2part1.txt
++ TEMP_PVALS=/tmp/temp_pvals.txt
++ TEMP_INTERMEDIATE_FILE_HOTSPOT2PART1=/tmp/temp_intermediateFile_hotspot2part1.txt
++ log 'Generating cut counts...'
+++ date '+%Y-%m-%d %H:%M:%S'
++ echo -e '2018-02-07 11:03:15\tGenerating cut counts...'
++ bash /home-4/xfeng17@jhu.edu/data/xfeng17/bin/cutcounts.bash /home-4/xfeng17@jhu.edu/data/xfeng17/dnase/dm/oregon/ENCFF005BHD_trimmed_filtered.bam out//ENCFF005BHD_trimmed_filtered.cutcounts.starch out//ENCFF005BHD_trimmed_filtered.fragments.sorted.starch out//ENCFF005BHD_trimmed_filtered.cleavage.total chrom_sizes.bed
++ [[ 5 != 5 ]]
++ bam=/home-4/xfeng17@jhu.edu/data/xfeng17/dnase/dm/oregon/ENCFF005BHD_trimmed_filtered.bam
++ CUTCOUNTS=out//ENCFF005BHD_trimmed_filtered.cutcounts.starch
++ FRAGMENTS=out//ENCFF005BHD_trimmed_filtered.fragments.sorted.starch
++ TOTALCUTSFILE=out//ENCFF005BHD_trimmed_filtered.cleavage.total
++ CHROM_SIZES=chrom_sizes.bed
++ MAPPABLE_REGIONS=
++ [[ 5 == 6 ]]
++ MAPPABLE_REGIONS=chrom_sizes.bed
++ '[' '!' -s /home-4/xfeng17@jhu.edu/data/xfeng17/dnase/dm/oregon/ENCFF005BHD_trimmed_filtered.bam ']'
++ '[' '!' -s chrom_sizes.bed ']'
++ clean=0
++ [[ -z /tmp ]]
+++ which mawk
++ AWK_EXE=/home-4/xfeng17@jhu.edu/data/xfeng17/bin/mawk
++ FRAGMENTSTMP=/tmp/fragments.bed
++ TEMP_UNFILTERED_CUTCOUNTS=/tmp/temp_unfiltered.cutcounts.bed
++ frange=25
++ brange=125
++ mintags=5
++ fraction=0.8
++ [[ ! -s out//ENCFF005BHD_trimmed_filtered.cutcounts.starch ]]
++ '[' 0 '!=' 0 ']'
++ exit 0
++ log 'Tallying filtered cut counts in small windows and running part 1 of hotspot2...'
+++ date '+%Y-%m-%d %H:%M:%S'
++ echo -e '2018-02-07 11:03:15\tTallying filtered cut counts in small windows and running part 1 of hotspot2...'
++ hotspot2_part1 --background_size=50001 -c /tmp/temp_chrom_mapping_hotspot2part1.txt -p /tmp/temp_pvals.txt -o /tmp/temp_intermediateFile_hotspot2part1.txt
++ /home-4/xfeng17@jhu.edu/data/xfeng17/bin/mawk 'BEGIN{OFS="\t"}{if("NAN"==$4){$4=0} print $1, $2, $3, "i", $4}'
++ bedmap --faster --range 100 --delim '\t' --prec 0 --echo --sum center_sites.starch out//ENCFF005BHD_trimmed_filtered.cutcounts.starch
+Warning:  In region chr2L:15653255-15703255, all counts used for statistics were 0, or all were 0 except one was 1.
+This generally should not happen.  If this region is unmappable or problematic for other reasons,
+it would almost certainly be best to filter it out of the input.
+There may be other such regions in the input; this warning will only be issued once during this run.
++ '[' 0 '!=' 0 ']'
+++ wc -l
++ numEntries=15166621
++ log 'Running part 2 of hotspot2...'
+++ date '+%Y-%m-%d %H:%M:%S'
++ echo -e '2018-02-07 11:15:00\tRunning part 2 of hotspot2...'
++ starch -
++ hotspot2_part2 --fdr_threshold=0.05 -i /tmp/temp_intermediateFile_hotspot2part1.txt -n 15166621 -c /tmp/temp_chrom_mapping_hotspot2part1.txt -p /tmp/temp_pvals.txt
+Error:  Expected to find exactly 15166621 lines of data in the file of location and P-value data, but only 37225 lines were found.
+
+Done!

@@ -9,6 +9,7 @@
 #SBATCH --cpus-per-task=1
 
 source activate ~/data/xfeng17/miniconda
+module load perl/5.22.1
 
 export PATH=$PATH:~/code/dnase_pipeline/dnanexus/dnase-call-hotspots/resources/usr/bin/
 
@@ -31,3 +32,5 @@ hotspot peaks density \
 > ENCFF332VRZ_trimmed_filtered_hotspot.log
 
 set +x
+
+echo "Done!"

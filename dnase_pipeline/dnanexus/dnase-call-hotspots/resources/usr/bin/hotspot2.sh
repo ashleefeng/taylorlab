@@ -212,6 +212,8 @@ if [ "$?" != "0" ]; then
 fi
 
 numEntries=`wc -l < $TEMP_PVALS` # used to aid memory allocation
+numEntries_i = `wc -l < $TEMP_INTERMEDIATE_FILE_HOTSPOT2PART1`
+numEntries_c = `wc -l < $TEMP_CHROM_MAPPING_HOTSPOT2PART1`
 
 log "Running part 2 of hotspot2..."
 "$HOTSPOT_EXE2" --fdr_threshold="$CALL_THRESHOLD" $WRITE_PVALS $SMOOTHING_PARAM \
