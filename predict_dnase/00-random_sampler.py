@@ -1,29 +1,82 @@
 #!/usr/bin/env python
 
 """
-Usage: ./00-random_sampler.py [peaks.bed] [ref.fasta]
+Usage: ./00-random_sampler.py [peaks.bed] [ref.fasta.fai]
 Xinyu (Ashlee) Feng
+Feb 22, 2018
 """
 
 import sys
 import pandas as pd
 import numpy as np
 
-# read peaks file and ref genome
 
-peaks = pd.read_csv("/Users/cmdb/taylor/rotation/data/dnase/hs/A549/processed/rep2/ENCFF135JRM.bed",\
-	sep='\t', header=None, names=["chrom", "start", "end", "name", "score", "strand", "thickStart",\
+"""
+Uses binary search to determine whether the random region overlaps with any of the dnase peaks
+Returns: True if there is an overlap
+         False if not
+"""
+def test_overlap(peaks, rand_chrom, chr2row, chr2lastrow, target_start, target_end):
+
+	lo = chr2row[rand_chrom]
+	hi = chr2lastrow[rand_chrom]
+
+	while lo < hi:
+		
+		# print "lo: ", lo
+		# print "hi: ", hi
+
+		mid = int(np.floor((lo + hi) / 2))
+
+		mid_start = peaks.iloc[mid]["start"]
+		# print "mid: ", mid
+
+		if mid_start < target_start: # too big
+			# print "Go to bottom half"
+			lo = mid + 1
+
+		elif mid_start > target_start: # too small
+			# print "Go to top half"
+			hi = mid - 1
+
+		else:
+			return True
+
+	# if no hit, in the last iteration, lo should
+	# point to the row below target_start
+
+	above_start = peaks.iloc[lo-1]["start"]
+	above_end = peaks.iloc[lo-1]["end"]
+	
+	below_start = peaks.iloc[lo]["start"]
+	below_end = peaks.iloc[lo]["end"]
+
+	if ((above_end < target_start) and \
+	   (target_end < below_start)) or \
+	   (above_start > target_end) or \
+	   (below_end < target_start):
+
+	   	# print "No overlap!"
+		return False
+
+	else:
+		print "Overlap: ", above_end, target_start, target_end, below_start
+		return True
+
+
+
+# read peaks file and ref genome
+bed_file = sys.argv[1]
+
+peaks = pd.read_csv(bed_file, sep='\t', header=None, \
+	names=["chrom", "start", "end", "name", "score", "strand", "thickStart",\
 	"thickEnd", 8, 9])
 
-# # for testing
-# peaks = pd.read_csv("00-test.bed",\
-# 	sep='\t', header=None, names=["chrom", "start", "end", "name", "score", "strand", "thickStart",\
-# 	"thickEnd", 8, 9])
+refidx = pd.read_csv(sys.argv[2], '\t', header=None, \
+	names=["chrom", "length", 2, 3, 4])
+
 peaks.sort_values(by=["chrom", "start"], inplace=True)
 num_peaks = peaks.shape[0]
-
-refidx = pd.read_csv("/Users/cmdb/taylor/rotation/ref/hs/hg38.fa.fai", '\t', header=None, \
-	names=["chrom", "length", 2, 3, 4])
 refidx.sort_values(by=["chrom"], inplace=True)
 
 # number --> chromosome name
@@ -45,80 +98,53 @@ for index, row in refidx.iterrows():
 	if row["chrom"] in chr_set:
 		chr2len[row["chrom"]] = row["length"]
 
-# chromosome name --> row# in the table
+# chromosome name --> first row# in the table
 
 chr2row = {}
 row_counter = 0
+
 for index, row in peaks.iterrows():
-
-	if (row["chrom"] not in chr2row) and (row["chrom"] in chr_set):
+	if (row["chrom"] not in chr2row) and \
+	   (row["chrom"] in chr_set):
 		chr2row[row["chrom"]] = row_counter
-
 	row_counter += 1
 
-# print chr2row
+# chromosome name --> last row# in the table
 
-# # test iloc
-# print "\nTesting iloc..."
-# print peaks.iloc[28860:28863]
+chr2lastrow = {}
+for i in range(num_peaks):
+	j = num_peaks - i - 1
+	row = peaks.iloc[j]
+	if (row["chrom"] not in chr2lastrow) and \
+	   (row["chrom"] in chr_set):
+	   chr2lastrow[row["chrom"]] = j 
 
-# where results are stored
+# randomly sample genome to generate negative set
 
 nonpeaks = pd.DataFrame(index=range(num_peaks), columns=["chrom", "start", "end"])
-
 counter = 0
 
 for index, row in peaks.iterrows():
 
-	# print "\nPeak " + str(counter)
-	# print row
 	dhs_len = row["end"] - row["start"] + 1
-	# print dhs_len
 	repick = True
 
 	while repick:
 
 		# pick random chrom
 		rand_chrom = n2chr[np.random.randint(0, 23)]
-		# print "Picked chromosome " + rand_chrom
 
 		# pick start site
 		rand_start = np.random.randint(0, chr2len[rand_chrom] - dhs_len)
 		rand_end = rand_start + dhs_len - 1
-		# print "Random start: " + str(rand_start)
-		# print "End: " + str(rand_end)
-
-		row_i = chr2row[rand_chrom]
 
 		# check if the random region overlaps with DHS
 		# if yes, then repick
 
-		while peaks.iloc[row_i]["chrom"] == "rand_chrom":
+		repick = test_overlap(peaks, rand_chrom, chr2row, chr2lastrow, rand_start, rand_end)
 
-			row_i_content = peaks.iloc(row_i)
-			row_i_start = row_i_content["start"]
-			row_i_end = row_i_content["end"]
-
-			if ((rand_start >= row_i_start) and (rand_start <= row_i_end)) or \
-			   ((rand_end >= row_i_start) and (rand_end <= row_i_end)):       
-			   
-			   # need to repick
-			   print "Row " + str(counter) + " Random region overlapped with peak " + row_i_content["name"] + ". Need to repick."
-
-			   break
-
-			row_i += 1
-
-			if row_i == num_peaks:
-				repick = False
-
-				# print "Reached the end of file. No overlap!"
-
-				break
-
-		else:
-			repick = False
-			# print "Compared with all DHS on this chromosome. No overlap!"
+		if repick:
+			print "Row " + str(counter) + " random region overlapped with a DNase peak. Need to repick."
 
 	nonpeaks.iloc[counter] = [rand_chrom, rand_start, rand_end]
 
@@ -127,14 +153,27 @@ for index, row in peaks.iterrows():
 	if counter % 10000 == 0:
 		print "Done with " + str(counter) + " rows."
 
-	# # for testing
-	# if counter == 5:
+
+	### for debugging
+
+	# if counter == 1:
 	# 	break
 
-# print nonpeaks
-nonpeaks.to_csv("nonpeaks.bed", sep='\t')
-peaks.to_csv("peaks_sorted.bed", sep='\t')
-	
+bed_file_path = ".".join(bed_file.split('.')[:-1])
+nonpeaks.to_csv(bed_file_path + "_nonpeaks.bed", sep='\t')
+peaks.to_csv(bed_file_path + "_peaks_sorted.bed", sep='\t')
+
+## for debugging
+
+## Expect True
+# print test_overlap(peaks, "chr19", chr2row, chr2lastrow, 40348300, 40348800)
+# print test_overlap(peaks, "chr19", chr2row, chr2lastrow, 40348900, 42396800)
+
+## Expect False
+
+# print test_overlap(peaks, "chr1", chr2row, chr2lastrow, 0, 100)
+
+
 	
 
 
