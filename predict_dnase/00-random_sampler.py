@@ -10,12 +10,16 @@ import sys
 import pandas as pd
 import numpy as np
 
+if len(sys.argv) == 1:
+	print "Usage: ./00-random_sampler.py <peaks.bed> <ref.fasta.fai>"
+	quit()
 
 """
 Uses binary search to determine whether the random region overlaps with any of the dnase peaks
 Returns: True if there is an overlap
          False if not
 """
+
 def test_overlap(peaks, rand_chrom, chr2row, chr2lastrow, target_start, target_end):
 
 	lo = chr2row[rand_chrom]
@@ -45,11 +49,17 @@ def test_overlap(peaks, rand_chrom, chr2row, chr2lastrow, target_start, target_e
 	# if no hit, in the last iteration, lo should
 	# point to the row below target_start
 
+	if peaks.iloc[lo-1]["chrom"] != rand_chrom:
+		# target is earlier than the first dnase 
+		# peak for that chromosome
+		return False
+
 	above_start = peaks.iloc[lo-1]["start"]
 	above_end = peaks.iloc[lo-1]["end"]
 	
 	below_start = peaks.iloc[lo]["start"]
 	below_end = peaks.iloc[lo]["end"]
+
 
 	if ((above_end < target_start) and \
 	   (target_end < below_start)) or \
@@ -62,7 +72,6 @@ def test_overlap(peaks, rand_chrom, chr2row, chr2lastrow, target_start, target_e
 	else:
 		print "Overlap: ", above_end, target_start, target_end, below_start
 		return True
-
 
 
 # read peaks file and ref genome
