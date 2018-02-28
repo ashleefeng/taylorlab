@@ -36,7 +36,7 @@ echo "-- Sampled alignments file will be: '${bam_sample_root}.bam'"
 
 echo "-- Filter out chrM..."
 set -x
-edwBamFilter -sponge -chrom=chrM $filtered_bam ${bam_no_chrM_root}.bam  ## qc based on bam without chrm
+#edwBamFilter -sponge -chrom=chrM $filtered_bam ${bam_no_chrM_root}.bam  ## qc based on bam without chrm
 set +x
 if [ "$pe_or_se" == "pe" ]; then
     echo "-- Restricting paired-end data to R1 only..."
@@ -46,26 +46,26 @@ if [ "$pe_or_se" == "pe" ]; then
     bam_no_chrM_root="${bam_no_chrM_root}_R1"
 fi
 set -x
-samtools index ${bam_no_chrM_root}.bam
+#samtools index ${bam_no_chrM_root}.bam
 set +x
 
 echo "-- Generating stats on $sample_size reads..."
 set -x
-edwBamStats -sampleBamSize=$sample_size -u4mSize=$sample_size -sampleBam=${bam_sample_root}.bam \
-                      ${bam_no_chrM_root}.bam ${bam_no_chrM_root}_sampling_edwBamStats.txt
-edwBamStats ${bam_sample_root}.bam ${bam_sample_root}_edwBamStats.txt
-samtools index ${bam_sample_root}.bam
+#edwBamStats -sampleBamSize=$sample_size -u4mSize=$sample_size -sampleBam=${bam_sample_root}.bam \
+#                      ${bam_no_chrM_root}.bam ${bam_no_chrM_root}_sampling_edwBamStats.txt
+#edwBamStats ${bam_sample_root}.bam ${bam_sample_root}_edwBamStats.txt
+#samtools index ${bam_sample_root}.bam
 set +x
 
 echo "-- Running spp..."
 set -x
 # awk didn't work, so use gawk and pre-create the tagAlign 
-samtools view -F 0x0204 -o - ${bam_sample_root}.bam | \
-   gawk 'BEGIN{OFS="\t"}{if (and($2,16) > 0) {print $3,($4-1),($4-1+length($10)),"N","1000","-"} else {print $3,($4-1),($4-1+length($10)),"N","1000","+"} }' \
-   | gzip -c > ${bam_sample_root}.tagAlign.gz
-Rscript phantompeakqualtools/run_spp.R -x=-500:-1 -s=-500:5:1500 -rf -c=${bam_sample_root}.tagAlign.gz \
-                                    -out=${bam_sample_root}_spp.txt > ${bam_sample_root}_spp_out.txt
-touch ${bam_sample_root}_spp.txt
+#samtools view -F 0x0204 -o - ${bam_sample_root}.bam | \
+#   gawk 'BEGIN{OFS="\t"}{if (and($2,16) > 0) {print $3,($4-1),($4-1+length($10)),"N","1000","-"} else {print $3,($4-1),($4-1+length($10)),"N","1000","+"} }' \
+#   | gzip -c > ${bam_sample_root}.tagAlign.gz
+#Rscript phantompeakqualtools/run_spp.R -x=-500:-1 -s=-500:5:1500 -rf -c=${bam_sample_root}.tagAlign.gz \
+#Ã                                    -out=${bam_sample_root}_spp.txt > ${bam_sample_root}_spp_out.txt
+#touch ${bam_sample_root}_spp.txt
 set +x
 
 echo "-- Running pbc..."
@@ -74,14 +74,14 @@ echo "-- Running pbc..."
 # Tim reinterprets:
 # Sampled Reads \t Distinct Locations Mapped \t Single-read Locations \t Multi-read Locations \t NRF (Non-Redundant Fraction)=Distinct Locations/Sample Reads \t PBC1=Single-read Locations/Distinct Locations \t PBC2=Single-read Locations/Multi-read Locations
 set -x
-bedtools bamtobed -i ${bam_sample_root}.bam | awk 'BEGIN{OFS="\t"}{print $1,$2,$3,$6}' | grep -v 'chrM' | sort | uniq -c \
-    | awk 'BEGIN{mt=0;m0=0;m1=0;m2=0} ($1==1){m1=m1+1} ($1==2){m2=m2+1} {m0=m0+1} {mt=mt+$1} END{printf "%d\t%d\t%d\t%d\t%f\t%f\t%f\n",mt,m0,m1,m2,m0/mt,m1/m0,m1/m2}' \
-    > ${bam_sample_root}_pbc.txt
+#bedtools bamtobed -i ${bam_sample_root}.bam | awk 'BEGIN{OFS="\t"}{print $1,$2,$3,$6}' | grep -v 'chrM' | sort | uniq -c \
+#    | awk 'BEGIN{mt=0;m0=0;m1=0;m2=0} ($1==1){m1=m1+1} ($1==2){m2=m2+1} {m0=m0+1} {mt=mt+$1} END{printf "%d\t%d\t%d\t%d\t%f\t%f\t%f\n",mt,m0,m1,m2,m0/mt,m1/m0,m1/m2}' \
+#    > ${bam_sample_root}_pbc.txt
 set +x
 
 echo "-- Opening archive of mappable regions..."
 set -x
-tar -xzf $mappable_tgz
+#tar -xzf $mappable_tgz
 set +x
 # Expect: chrom_sizes.bed, center_sites.starch, mappable_target.starch, GRCh38_no_alts.K36.mappable_only.starch, GRCh38.blacklist.bed
 
@@ -93,7 +93,7 @@ echo "-- Creating chromInfo.bed from chrom_sizes.bed..."
 #cat min_chrom.sizes | awk '{printf "%s\t%s\t%s\t%s\n",$1,$2,$3,$1}' | sort-bed - > ${assembly}.chromInfo.bed
 ## sort-bed is important!
 set -x
-grep ^chr chrom_sizes.bed | awk '{printf "%s\t%s\t%s\t%s\n",$1,$2,$3,$1}' | sort-bed - > ${assembly}.chromInfo.bed
+grep ^chr dm_chrom_sizes.bed | awk '{printf "%s\t%s\t%s\t%s\n",$1,$2,$3,$1}' | sort-bed - > ${assembly}.chromInfo.bed
 set +x
 
 echo "-- Moving hotspot1 mappable file to expected name and place..."
@@ -101,7 +101,7 @@ mappable=${assembly}.K${read_length}.mappable_only
 satellites=Satellite.${assembly}
 if [ "$read_length" == "36" ]; then
     set -x
-    unstarch mappable_target.starch > ${hotspot_dir}/hotspot-distr/data/${mappable}.bed
+    #unstarch mappable_target.starch > ${hotspot_dir}/hotspot-distr/data/${mappable}.bed
     # Note that the blacklist is already removed from mappable_targets so will be a noop but hotspot1 doesn't know that.
     if [ -e *.blacklist.bed ]; then
         set -x
@@ -123,12 +123,12 @@ fi
 
 echo "-- Running hotspot.py..."
 set -x
-mkdir tmp
-mkdir out
+mkdir tmp2
+mkdir out2
 cp ${assembly}.chromInfo.bed ${hotspot_dir}/hotspot-distr/data/
-hotspot.py -o ${hotspot_dir}/hotspot-distr/ ${bam_sample_root}.bam $assembly DNase-seq $read_length tmp out
+hotspot.py -o ${hotspot_dir}/hotspot-distr/ ${bam_sample_root}.bam $assembly DNase-seq $read_length tmp2 out2
 
-cp tmp/${bam_sample_root}.spot.out ${bam_sample_root}_hotspot1_qc.txt
+cp tmp2/${bam_sample_root}.spot.out ${bam_sample_root}_hotspot1_qc.txt
 set +x
 
 echo "-- The results..."

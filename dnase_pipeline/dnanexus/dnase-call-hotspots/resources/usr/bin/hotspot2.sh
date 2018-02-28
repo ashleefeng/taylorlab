@@ -199,7 +199,8 @@ TEMP_PVALS=${TMPDIR}/temp_pvals.txt
 TEMP_INTERMEDIATE_FILE_HOTSPOT2PART1=${TMPDIR}/temp_intermediateFile_hotspot2part1.txt
 
 log "Generating cut counts..."
-bash "$CUTCOUNT_EXE" "$BAM" "$CUTCOUNTS" "$FRAGMENTS_OUTFILE" "$TOTALCUTS_OUTFILE" "$CHROM_SIZES" "$MAPPABLE_REGIONS"
+# bash "$CUTCOUNT_EXE" "$BAM" "$CUTCOUNTS" "$FRAGMENTS_OUTFILE" "$TOTALCUTS_OUTFILE" "$CHROM_SIZES" "$MAPPABLE_REGIONS"
+bash "$CUTCOUNT_EXE" "$BAM" "$CUTCOUNTS" "$FRAGMENTS_OUTFILE" "$TOTALCUTS_OUTFILE" "$CHROM_SIZES"
 
 log "Tallying filtered cut counts in small windows and running part 1 of hotspot2..."
 bedmap --faster --range "$SITE_NEIGHBORHOOD_HALF_WINDOW_SIZE" --delim "\t" --prec 0 --echo --sum "$CENTER_SITES" "$CUTCOUNTS" \
@@ -211,6 +212,8 @@ if [ "$?" != "0" ]; then
 fi
 
 numEntries=`wc -l < $TEMP_PVALS` # used to aid memory allocation
+numEntries_i = `wc -l < $TEMP_INTERMEDIATE_FILE_HOTSPOT2PART1`
+numEntries_c = `wc -l < $TEMP_CHROM_MAPPING_HOTSPOT2PART1`
 
 log "Running part 2 of hotspot2..."
 "$HOTSPOT_EXE2" --fdr_threshold="$CALL_THRESHOLD" $WRITE_PVALS $SMOOTHING_PARAM \

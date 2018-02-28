@@ -1,0 +1,29 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+Started analysis of ENCFF332VRZ.fastq
+Approx 5% complete for ENCFF332VRZ.fastq
+Approx 10% complete for ENCFF332VRZ.fastq
+Approx 15% complete for ENCFF332VRZ.fastq
+Approx 20% complete for ENCFF332VRZ.fastq
+Approx 25% complete for ENCFF332VRZ.fastq
+Approx 30% complete for ENCFF332VRZ.fastq
+Approx 35% complete for ENCFF332VRZ.fastq
+Approx 40% complete for ENCFF332VRZ.fastq
+Approx 45% complete for ENCFF332VRZ.fastq
+Approx 50% complete for ENCFF332VRZ.fastq
+Approx 55% complete for ENCFF332VRZ.fastq
+Approx 60% complete for ENCFF332VRZ.fastq
+Approx 65% complete for ENCFF332VRZ.fastq
+Approx 70% complete for ENCFF332VRZ.fastq
+Approx 75% complete for ENCFF332VRZ.fastq
+Approx 80% complete for ENCFF332VRZ.fastq
+Approx 85% complete for ENCFF332VRZ.fastq
+Approx 90% complete for ENCFF332VRZ.fastq
+Approx 95% complete for ENCFF332VRZ.fastq
+Analysis complete for ENCFF332VRZ.fastq
