@@ -169,8 +169,8 @@ for index, row in peaks.iterrows():
 	# 	break
 
 bed_file_path = ".".join(bed_file.split('.')[:-1])
-nonpeaks.to_csv(bed_file_path + "_nonpeaks.bed", sep='\t')
-peaks.to_csv(bed_file_path + "_peaks_sorted.bed", sep='\t')
+nonpeaks.to_csv(bed_file_path + "_nonpeaks.bed", sep='\t', header=False, index=False)
+peaks.to_csv(bed_file_path + "_peaks_sorted.bed", sep='\t', header=False, index=False)
 
 ## for debugging
 
