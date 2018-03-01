@@ -24,7 +24,7 @@ for line in file:
 		chars = set(list(line))
 		if 'N' in chars:
 			# useless squence
-			print header + line
+			#print header + line
 			header = ""
 			continue
 		else:
