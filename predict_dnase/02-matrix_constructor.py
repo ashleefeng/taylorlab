@@ -59,10 +59,10 @@ for index, row in fimo.iterrows():
 	if test % 400000 == 0:
 		print "Done with " + str(test) + ' rows!'
 
-	loc = row["sequence_name"] # web fimo column name
-	# loc = row["sequence name"] # local fimo
-	motif = row["# motif_id"] # web
-	# motif = row["#pattern name"]
+	#loc = row["sequence_name"] # web fimo column name
+	loc = row["sequence name"] # local fimo
+	#motif = row["# motif_id"] # web
+	motif = row["#pattern name"]
 	tokens = loc.split(':')
 	chrN = tokens[0].lstrip('chr')
 	startend = tokens[1]
