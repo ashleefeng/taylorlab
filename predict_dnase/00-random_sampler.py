@@ -1,17 +1,19 @@
 #!/usr/bin/env python
 
 """
-Usage: ./00-random_sampler.py [peaks.bed] [ref.fasta.fai]
+Usage: ./00-random_sampler.py <file.bed> <ref.fasta.fai> <outdir>
+Output: outdir/file_peaks_sorted.bed, outidir/file_nonpeaks.bed
 Xinyu (Ashlee) Feng
 Feb 22, 2018
 """
 
 import sys
+from os.path import basename
 import pandas as pd
 import numpy as np
 
 if len(sys.argv) == 1:
-	print "Usage: ./00-random_sampler.py <peaks.bed> <ref.fasta.fai>"
+	print "Usage: ./00-random_sampler.py <peaks.bed> <ref.fasta.fai> <outdir>"
 	quit()
 
 """
@@ -76,12 +78,14 @@ def test_overlap(peaks, rand_chrom, chr2row, chr2lastrow, target_start, target_e
 
 # read peaks file and ref genome
 bed_file = sys.argv[1]
+ref_index_file = sys.argv[2]
+outdir = sys.argv[3]
 
 peaks = pd.read_csv(bed_file, sep='\t', header=None, \
 	names=["chrom", "start", "end", "name", "score", "strand", "thickStart",\
 	"thickEnd", 8, 9])
 
-refidx = pd.read_csv(sys.argv[2], '\t', header=None, \
+refidx = pd.read_csv(ref_index_file, '\t', header=None, \
 	names=["chrom", "length", 2, 3, 4])
 
 peaks.sort_values(by=["chrom", "start"], inplace=True)
@@ -168,9 +172,9 @@ for index, row in peaks.iterrows():
 	# if counter == 1:
 	# 	break
 
-bed_file_path = ".".join(bed_file.split('.')[:-1])
-nonpeaks.to_csv(bed_file_path + "_nonpeaks.bed", sep='\t', header=False, index=False)
-peaks.to_csv(bed_file_path + "_peaks_sorted.bed", sep='\t', header=False, index=False)
+bed_base = basename(bed_file).rstrip(".bed")
+nonpeaks.to_csv(outdir + "/" + bed_base + "_nonpeaks_temp.bed", sep='\t', header=False, index=False)
+peaks.to_csv(outdir + "/" + bed_base + "_peaks_sorted.bed", sep='\t', header=False, index=False)
 
 ## for debugging
 
