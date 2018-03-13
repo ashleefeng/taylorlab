@@ -118,7 +118,8 @@ mkdir $OUTDIR
 
 00-random_sampler.py $PEAKS_FILE $INDEX_FILE $OUTDIR
 
-PEAKS_PREFIX="${OUTDIR}/${PEAKS_FILE%.bed}"
+PEAKS_BASE=`basename $PEAKS_FILE .bed`
+PEAKS_PREFIX="${OUTDIR}/$PEAKS_BASE"
 PEAKS_SORTED_BED="${PEAKS_PREFIX}_peaks_sorted.bed"
 PEAKS_SORTED_FA="${PEAKS_PREFIX}_peaks_sorted.fa"
 NONPEAKS_TEMP_BED="${PEAKS_PREFIX}_nonpeaks_temp.bed"
@@ -212,6 +213,6 @@ echo "   $ALL_MAT"
 echo 
 echo "Done!"
 
-exit 0
+exit $?
 
 			

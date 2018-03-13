@@ -72,7 +72,7 @@ def test_overlap(peaks, rand_chrom, chr2row, chr2lastrow, target_start, target_e
 		return False
 
 	else:
-		print "Overlap: ", above_end, target_start, target_end, below_start
+		# print "Overlap: ", above_end, target_start, target_end, below_start
 		return True
 
 
@@ -156,8 +156,8 @@ for index, row in peaks.iterrows():
 
 		repick = test_overlap(peaks, rand_chrom, chr2row, chr2lastrow, rand_start, rand_end)
 
-		if repick:
-			print "Row " + str(counter) + " random region overlapped with a DNase peak. Need to repick."
+		# if repick:
+			# print "Row " + str(counter) + " random region overlapped with a DNase peak. Need to repick."
 
 	nonpeaks.iloc[counter] = [rand_chrom, rand_start, rand_end]
 
