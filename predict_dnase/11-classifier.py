@@ -96,7 +96,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.50)
 lr_clf = LogisticRegressionCV(cv=5)
 lr_clf.fit(X_train, y_train)
 
-performance(lr_clf, X_test, y_test, out_prefix, will_plot, log, 'lr')
+performance(lr_clf, X_test, y_test, out_prefix, will_plot, log)
 save_ranks(lr_clf.coef_, motif_list, out_prefix)
 
 log.close()
