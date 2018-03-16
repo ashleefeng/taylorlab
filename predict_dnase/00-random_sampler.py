@@ -154,7 +154,10 @@ for index, row in peaks.iterrows():
 		# check if the random region overlaps with DHS
 		# if yes, then repick
 
-		repick = test_overlap(peaks, rand_chrom, chr2row, chr2lastrow, rand_start, rand_end)
+		try:
+			repick = test_overlap(peaks, rand_chrom, chr2row, chr2lastrow, rand_start, rand_end)
+		except KeyError:
+			print "%s file is missing %s" %(bed_file, rand_chrom)
 
 		# if repick:
 			# print "Row " + str(counter) + " random region overlapped with a DNase peak. Need to repick."

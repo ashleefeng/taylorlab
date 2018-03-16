@@ -210,8 +210,6 @@ echo "Results:"
 echo "   $PEAKS_MAT"
 echo "   $NONPEAKS_MAT"
 echo "   $ALL_MAT"
-echo 
-echo "Done!"
 
 exit $?
 

@@ -5,8 +5,25 @@ Trains a classifier on the given training set and assesses its performance
 
 Xinyu Feng, March 12 2018
 
-Example usage: ./11-classifier.py -m 10-test/00-test_all_matrix.tsv -t 50 -o 11-test/result -p -l human_pwm_ids_sorted.txt
+Example usage: ./11-classifier.py -r 10-test/00-test_all_matrix.tsv 50 human_pwm_ids_sorted.txt lr 11-test/result
+Example 2: ./11-classifier.py -r -p 4 training_data/A549/noNNN/ENCFF045PYX_rep5_all_matrix.tsv 72082 human_pwm_ids_sorted.txt rf 11-test/A549_rep5_RF
 """
+
+import argparse
+
+# Parse arguments
+
+parser = argparse.ArgumentParser(description='Train a chromatin accessibility classifier.')
+parser.add_argument('matrix' , help="<mat.tsv> matrix of training data")
+parser.add_argument('n_true', type=int, help="<int> number of true labels in the matrix")
+parser.add_argument('motif_list', help="<pwm_ids.txt> names of pwms in the same order as the matrix")
+parser.add_argument('classifier', help='< lr | rf > train a logistic regression or random forest classifier')
+parser.add_argument('out_prefix', help="prefix for output")
+
+parser.add_argument('-r', '--roc', action='store_true', help='generate ROC curve')
+parser.add_argument('-p', '--threads', type=int, help='[int=4] number of threads to use.')
+
+args = vars(parser.parse_args())
 
 from sklearn.preprocessing import normalize
 from sklearn.model_selection import train_test_split
@@ -20,7 +37,6 @@ from sklearn.metrics import roc_auc_score
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import argparse
 
 """
 Evaluate performance of clf, save results to log file and as figures.
@@ -47,41 +63,46 @@ def performance(clf, X_test, y_test, out_prefix, will_plot, log):
 		log.write("\nLogistic regression classifier:\n\n")
 		log.write("optimized C = %.2f\ntest set score = %.2f\nauc = %.2f\n" %(clf.C_, test_score, auc))
 
+	elif (type(clf) == RandomForestClassifier):
+		log.write("\nRandom forest classifier:\n\n")
+		log.write("n_estimators = %d\ntest set score = %.2f\nauc = %.2f\n" %(len(clf.estimators_), test_score, auc))
+
 	return
 
 """ 
 Save pwms ranked by clf parameters.
 
+input ranks: 1-D array
 """
-def save_ranks(ranks, motif_list, out_prefix):
+def save_ranks(clf, ranks, motif_list, out_prefix):
 
-	sort_ids = np.flip(np.argsort(ranks), 1)
+	sort_ids = np.flip(np.argsort(ranks), 0)
 	motif_list['rank'] = ranks.T 
 
-	to_save = motif_list.iloc[sort_ids[0], [1, 2, 3]]
+	to_save = motif_list.iloc[sort_ids, [1, 2, 3]]
 	to_save.to_csv(out_prefix + '_ranks.tsv', sep='\t',header=False, index=False)
 
 	return
 
-# Parse arguments
-
-parser = argparse.ArgumentParser(description='Train a chromatin accessibility classifier.')
-parser.add_argument('-m', '--matrix' , help="<mat.tsv> matrix of training data")
-parser.add_argument('-t', '--true', type=int, help="<int> number of true labels in the matrix")
-parser.add_argument('-o', '--out', help="<out_prefix> prefix for output")
-parser.add_argument('-p', '--plot', action='store_true')
-parser.add_argument('-l', '--motif_list', help="<pwm_ids.txt> names of pwms in the same order as the matrix")
-
-args = vars(parser.parse_args())
 matrix_filename = args['matrix']
-n_true = args['true']
-out_prefix = args['out']
-will_plot = args['plot']
+n_true = args['n_true']
+out_prefix = args['out_prefix']
+will_plot = args['roc']
 motif_list = pd.read_csv(args['motif_list'], sep=' ', header=None)
+clf_type = args['classifier']
+if args['threads']:
+	p = args['threads']
+else:
+	p = 4
 
 log = open(out_prefix + '.log', 'w')
 log.write('Matrix file: %s\n' %matrix_filename)
 log.write('Number of true labels: %d\n' %n_true)
+if clf_type == 'rf':
+	clf_type_print = 'random forest'
+elif clf_type == 'lr':
+	clf_type_print = 'logistic regression'
+log.write('Training a %s classifier...\n' %clf_type_print)
 
 # Loading data 
 
@@ -91,12 +112,21 @@ for i in range(n_true):
 	y[i] = 1
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.50)
 
-# Train a logistic regression classifier
+# Train classifier
 
-lr_clf = LogisticRegressionCV(cv=5)
-lr_clf.fit(X_train, y_train)
+if clf_type == 'lr':
 
-performance(lr_clf, X_test, y_test, out_prefix, will_plot, log)
-save_ranks(lr_clf.coef_, motif_list, out_prefix)
+	clf = LogisticRegressionCV(cv=5)
+	clf.fit(X_train, y_train)
+	ranks = np.reshape(clf.coef_, len(clf.coef_[0]))
+
+elif clf_type == 'rf':
+
+	clf = RandomForestClassifier(n_estimators=20, n_jobs=p)
+	clf.fit(X_train, y_train)
+	ranks = clf.feature_importances_
+
+performance(clf, X_test, y_test, out_prefix, will_plot, log)
+save_ranks(clf, ranks, motif_list, out_prefix)
 
 log.close()
