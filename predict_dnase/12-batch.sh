@@ -61,7 +61,7 @@ for file in $DATA_DIR/$FILENAME; do
 		FILE_PREFIX="${OUT_DIR}/${BED_BASE}"
 		MATRIX_FILE="${FILE_PREFIX}_all_matrix.tsv"
 		N_TRUE="`wc -l < "${FILE_PREFIX}_peaks_matrix.tsv"`"
-		MOTIF_LIST='human_pwm_ids_sorted.txt'
+		MOTIF_LIST=$PWM_IDS
 		CLF='lr'
 		OUT_PREFIX="${FILE_PREFIX}_$CLF"
 

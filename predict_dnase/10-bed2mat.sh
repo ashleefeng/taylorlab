@@ -138,14 +138,14 @@ if [ ! -e "$NONPEAKS_TEMP_BED" ]; then
 	exit -1
 fi
 
-bedtools getfasta -fi $REF_FA_FILE -bed $NONPEAKS_TEMP_BED > $NONPEAKS_TEMP_FA
+bedtools getfasta -fi $REF_FA_FILE -bed $NONPEAKS_TEMP_BED -fo $NONPEAKS_TEMP_FA
 
 if [ "$?" != "0" ]; then
 	echo -e "Error when running bedtools getfasta on $NONPEAKS_TEMP_BED"
 	exit -1
 fi 
 
-bedtools getfasta -fi $REF_FA_FILE -bed $PEAKS_SORTED_BED > $PEAKS_SORTED_FA
+bedtools getfasta -fi $REF_FA_FILE -bed $PEAKS_SORTED_BED -fo $PEAKS_SORTED_FA
 
 if [ "$?" != "0" ]; then
 	echo -e "Error when running bedtools getfasta on $PEAKS_SORTED_BED"
