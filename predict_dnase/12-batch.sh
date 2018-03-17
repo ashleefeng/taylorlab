@@ -82,11 +82,13 @@ for file in $DATA_DIR/$FILENAME; do
 			exit -1
 		fi 
 
+		echo
+		echo "Done with classification for $file!"
+
 	) &
 
 done
 wait
 
-echo
-echo "Done with classification too!"
+
 exit 0

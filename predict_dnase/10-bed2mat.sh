@@ -114,7 +114,9 @@ require_exes bedtools fimo 00-random_sampler.py 011-NNN_remover.py 012-fasta2bed
 
 echo "Generating training datasets..."
 
-mkdir $OUTDIR
+if [ ! -d "$OUTDIR" ]; then
+	mkdir $OUTDIR
+fi
 
 00-random_sampler.py $PEAKS_FILE $INDEX_FILE $OUTDIR
 
@@ -139,14 +141,14 @@ fi
 bedtools getfasta -fi $REF_FA_FILE -bed $NONPEAKS_TEMP_BED > $NONPEAKS_TEMP_FA
 
 if [ "$?" != "0" ]; then
-	echo -e "Error when running bedtools getfasta on $NONPEAKS_TEMP_BED."
+	echo -e "Error when running bedtools getfasta on $NONPEAKS_TEMP_BED"
 	exit -1
 fi 
 
 bedtools getfasta -fi $REF_FA_FILE -bed $PEAKS_SORTED_BED > $PEAKS_SORTED_FA
 
 if [ "$?" != "0" ]; then
-	echo -e "Error when running bedtools getfasta on $PEAKS_SORTED_BED."
+	echo -e "Error when running bedtools getfasta on $PEAKS_SORTED_BED"
 	exit -1
 fi 
 
@@ -163,7 +165,7 @@ echo "Running fimo on $PEAKS_SORTED_FA..."
 fimo --text --verbosity 1 $PWM_FILE $PEAKS_SORTED_FA > $PEAKS_FIMO
 
 if [ "$?" != "0" ]; then
-	echo -e "Error when running fimo on $PEAKS_SORTED_FA."
+	echo -e "Error when running fimo on $PEAKS_SORTED_FA"
 	exit -1
 fi 
 
@@ -172,7 +174,7 @@ echo "Running fimo on $NONPEAKS_FA..."
 fimo --text --verbosity 1 $PWM_FILE $NONPEAKS_FA > $NONPEAKS_FIMO
 
 if [ "$?" != "0" ]; then
-	echo -e "Error when running fimo on $NONPEAKS_FA."
+	echo -e "Error when running fimo on $NONPEAKS_FA"
 	exit -1
 fi
 
