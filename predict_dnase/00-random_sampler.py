@@ -136,6 +136,7 @@ for i in range(num_peaks):
 
 nonpeaks = pd.DataFrame(index=range(num_peaks), columns=["chrom", "start", "end"])
 counter = 0
+missing_chr = set()
 
 for index, row in peaks.iterrows():
 
@@ -157,8 +158,9 @@ for index, row in peaks.iterrows():
 		try:
 			repick = test_overlap(peaks, rand_chrom, chr2row, chr2lastrow, rand_start, rand_end)
 		except KeyError:
-			print "%s file is missing %s" %(bed_file, rand_chrom)
-
+			if rand_chrom not in missing_chr:
+				print "%s file is missing %s" %(bed_file, rand_chrom)
+				missing_chr.add(rand_chrom)
 		# if repick:
 			# print "Row " + str(counter) + " random region overlapped with a DNase peak. Need to repick."
 
