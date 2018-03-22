@@ -109,6 +109,7 @@ log.write('Training a %s classifier...\n' %clf_type_print)
 # Loading data 
 
 X = np.loadtxt(matrix_filename, delimiter='\t')
+X = normalize(X)
 y = np.zeros((X.shape[0],), dtype=np.uint8)
 for i in range(n_true):
 	y[i] = 1
