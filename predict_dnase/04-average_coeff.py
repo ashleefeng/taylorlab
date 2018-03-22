@@ -23,8 +23,8 @@ outname = out_prefix + "_avg.tsv"
 master_df = pd.DataFrame()
 
 for i in range(num_files):
-	# df = pd.read_csv(sys.argv[i + 1], sep='\t', header=None) 
-	df = pd.read_csv(sys.argv[i + 1], sep='\t', header=None, skiprows=3, usecols=[1, 2, 3]) # for K562 logistic reg
+	df = pd.read_csv(sys.argv[i + 1], sep='\t', header=None) 
+	# df = pd.read_csv(sys.argv[i + 1], sep='\t', header=None, skiprows=3, usecols=[1, 2, 3]) # for K562 logistic reg
 
 	if master_df.empty:
 		master_df = df
@@ -34,8 +34,8 @@ for i in range(num_files):
 	# df.sort_values(by=0, axis=0, inplace=True)
 	df.sort_values(by=1, axis=0, inplace=True) # for K562 logistic reg
 	
-	# master_df[i+2] = df[2]
-	master_df[i+3] = df[3]
+	master_df[i+2] = df[2]
+	# master_df[i+3] = df[3]
 
 # print master_df.head()
 

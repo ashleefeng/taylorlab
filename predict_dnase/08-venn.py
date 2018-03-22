@@ -2,11 +2,19 @@
 
 import sys
 import pandas as pd
+import numpy as np 
+
+if len(sys.argv) == 1:
+	print "Usage: ./08-venn.py <one.tsv> <two.tsv> ... < lr | rf > <fraction>"
+	quit()
+
+assert (sys.argv[-2] == 'lr' or sys.argv[-2] == 'rf'), "Wrong argument"
 
 rank_list = []
 lr = 0
+fraction = float(sys.argv[-1])
 
-for arg in sys.argv[1:-1]:
+for arg in sys.argv[1:-2]:
 
 	is_avg = 0
 	file = open(arg)
@@ -24,11 +32,9 @@ for arg in sys.argv[1:-1]:
 		rank_file = pd.read_csv(arg, sep='\t', header=None)
 		rank_list.append(rank_file)
 
-assert (sys.argv[-1] == 'lr' or sys.argv[-1] == 'rf'), "Wrong argument"
-
-if sys.argv[-1] == 'lr':
+if sys.argv[-2] == 'lr':
 	lr = 1
-elif sys.argv[-1] == 'rf':
+elif sys.argv[-2] == 'rf':
 	lr = 0
 
 id2name = {}
@@ -48,10 +54,10 @@ def id2stats_add(id2stats, motif_id, motif_name, score):
 
 	return None
 
-top_sets = []
+# top_sets = []
 
 for i in range(len(rank_list)):
-	iset = set()
+	# iset = set()
 	rank = rank_list[i]
 
 	if lr == 1:
@@ -59,35 +65,34 @@ for i in range(len(rank_list)):
 		bot50 = rank.iloc[-50:]
 
 		for index, j in top50.iterrows():
-			iset.add(j[0])
+			# iset.add(j[0])
 			id2stats_add(id2stats, j[0], j[1], j[2])
 
-
 		for index, k in bot50.iterrows():
-			iset.add(k[0])
+			# iset.add(k[0])
 			id2stats_add(id2stats, k[0], k[1], k[2])
 	else:
 		top100 = rank.iloc[:100]
 
 		for index, j in top100.iterrows():
-			iset.add(j[0])
+			# iset.add(j[0])
 			id2stats_add(id2stats, j[0], j[1], j[2])
 
-	top_sets.append(iset)
+	# top_sets.append(iset)
 
-common = top_sets[0]
+# common = top_sets[0]
 
-for jset in top_sets[1:]:
-	common = common.intersection(jset)
+# for jset in top_sets[1:]:
+	# common = common.intersection(jset)
 
 # print common
-print "Found %d common factors" %len(common)
+# print "Found %d common factors" %len(common)
 
-common_names = []
-for i in common:
-	common_names.append(id2name[i])
+# common_names = []
+# for i in common:
+# 	common_names.append(id2name[i])
 
-print common_names
+# print common_names
 
 id2stats_df = pd.DataFrame.from_dict(id2stats, orient='index')
 
@@ -96,5 +101,21 @@ for i in range(id2stats_df.shape[0]):
 
 	id2stats_df.iloc[i, 3] = id2stats_df.iloc[i, 2] / id2stats_df.iloc[i, 1]
 
-print id2stats_df.sort_values([1, 3], ascending=False)
+min_count = int(np.ceil(len(rank_list) * fraction))
+id2stats_sorted = id2stats_df.sort_values([1, 3], ascending=False)
+
+# print "Shared in %d%% (%d) of all cell types:" %(int(fraction*100), min_count)
+
+for index, row in id2stats_sorted.iterrows():
+	# for pionneers
+	if row[1] < min_count:
+		break
+	# for nonpioneers
+	# if row[1] > min_count:
+	# 	continue
+	motif_id = index
+	motif_name = row[0]
+	count = row[1]
+	score = row[3]
+	print "%s\t%s\t%d\t%.4f" %(motif_id, motif_name, count, score)
 
