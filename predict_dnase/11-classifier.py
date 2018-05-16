@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
 """
-Trains a classifier on the given training set and assesses its performance
+Trains a open/closed chromatin classifier on the given matrix of PWM matches to open chromation regions
+and assesses its performance.
 
 Xinyu Feng, March 12 2018
 
