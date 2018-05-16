@@ -28,9 +28,9 @@ for i in range(num_files):
 
 	if master_df.empty:
 		master_df = df
-
-	df.sort_values(by=1, axis=0, inplace=True) # for K562 logistic reg
 	print df.head()
+	df.sort_values(by=1, axis=0, inplace=True) # for K562 logistic reg
+	
 
 	master_df[i+2] = df[2]
 
@@ -42,5 +42,5 @@ master_df["std"] = std
 master_df.sort_values(by="mean", axis=0, inplace=True, ascending=False)
 print master_df.head()
 
-master_df.to_csv(outname, sep='\t', index=False, float_format='%.4f')
+master_df.to_csv(outname, sep='\t', float_format='%.4f')
 
