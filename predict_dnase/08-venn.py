@@ -5,16 +5,22 @@ import pandas as pd
 import numpy as np 
 
 if len(sys.argv) == 1:
-	print "Usage: ./08-venn.py <one.tsv> <two.tsv> ... < lr | rf > <fraction>"
+	print "Usage: ./08-venn.py <one.tsv> <two.tsv> ... < lr | rf > < N (100) > <fraction>"
+	print "Xinyu A. Feng   May 16, 2018"
 	quit()
 
-assert (sys.argv[-2] == 'lr' or sys.argv[-2] == 'rf'), "Wrong argument"
+assert (sys.argv[-3] == 'lr' or sys.argv[-3] == 'rf'), "Wrong argument"
 
 rank_list = []
 lr = 0
-fraction = float(sys.argv[-1])
 
-for arg in sys.argv[1:-2]:
+fraction = float(sys.argv[-1])
+assert (fraction > 0 and fraction < 1), "fraction should be within (0, 1)"
+
+n = int(sys.argv[-2])
+assert (n > 0), "N should be a positive integer"
+
+for arg in sys.argv[1:-3]:
 
 	is_avg = 0
 	file = open(arg)
@@ -32,9 +38,9 @@ for arg in sys.argv[1:-2]:
 		rank_file = pd.read_csv(arg, sep='\t', header=None)
 		rank_list.append(rank_file)
 
-if sys.argv[-2] == 'lr':
+if sys.argv[-3] == 'lr':
 	lr = 1
-elif sys.argv[-2] == 'rf':
+elif sys.argv[-3] == 'rf':
 	lr = 0
 
 id2name = {}
@@ -61,20 +67,20 @@ for i in range(len(rank_list)):
 	rank = rank_list[i]
 
 	if lr == 1:
-		top50 = rank.iloc[:50]
-		bot50 = rank.iloc[-50:]
+		top = rank.iloc[:(n/2)]
+		bot = rank.iloc[-(n/2):]
 
-		for index, j in top50.iterrows():
+		for index, j in top.iterrows():
 			# iset.add(j[0])
 			id2stats_add(id2stats, j[0], j[1], j[2])
 
-		for index, k in bot50.iterrows():
+		for index, k in bot.iterrows():
 			# iset.add(k[0])
 			id2stats_add(id2stats, k[0], k[1], k[2])
 	else:
-		top100 = rank.iloc[:100]
+		top = rank.iloc[:n]
 
-		for index, j in top100.iterrows():
+		for index, j in top.iterrows():
 			# iset.add(j[0])
 			id2stats_add(id2stats, j[0], j[1], j[2])
 
