@@ -8,6 +8,7 @@ Xinyu Feng, March 12 2018
 
 Example usage: ./11-classifier.py -r 10-test/00-test_all_matrix.tsv 50 human_pwm_ids_sorted.txt lr 11-test/result
 Example 2: ./11-classifier.py -r -p 4 training_data/A549/noNNN/ENCFF045PYX_rep5_all_matrix.tsv 72082 human_pwm_ids_sorted.txt rf 11-test/A549_rep5_RF
+RNA-seq example: ./11-classifier.py -r ENCFF342EGB_ENCFF297CNO_TPM_matrix.tsv 56659 ../human_pwm_ids_sorted.txt lr ENCFF342EGB_ENCFF297CNO_TPM_lr
 """
 
 import argparse
@@ -84,7 +85,18 @@ input ranks: 1-D array
 def save_ranks(clf, ranks, motif_list, out_prefix):
 
 	sort_ids = np.flip(np.argsort(ranks), 0)
-	motif_list['rank'] = ranks.T 
+	n_motifs = motif_list.shape[0]
+
+	# DNase-seq only or RNA-seq only
+	if len(ranks) == n_motifs:
+		motif_list['rank'] = ranks.T
+
+	# DNase-seq and RNA-seq:
+	else:
+		motif_list = motif_list.append(motif_list)
+		for i in range(n_motifs, 2*n_motifs):
+			motif_list.iloc[i, 1] = motif_list.iloc[i, 1] + "*TPM"
+		motif_list['rank'] = ranks.T
 
 	to_save = motif_list.iloc[sort_ids, [1, 2, 3]]
 	to_save.to_csv(out_prefix + '_ranks.tsv', sep='\t',header=False, index=False)
