@@ -10,12 +10,12 @@
 
 source activate ~/data/xfeng17/miniconda
 
-DATA_DIR=~/code/predict_dnase/12-test
-PWM=~/data/xfeng17/pwm/20180217_JASPAR2018_combined_matrices_31015_meme_human_537_TFs.txt
-PWM_IDS=~/code/predict_dnase/human_pwm_ids_sorted.txt 
-REF_FA=~/data/xfeng17/ref_genome/hs/hg38.fa
-REF_IDX=~/data/xfeng17/ref_genome/hs/hg38.fa.fai
-OUT_DIR=~/code/predict_dnase/12-test_out
+DATA_DIR=~/scratch/data/12-test
+PWM=~/scratch/data/pwm/20180217_JASPAR2018_combined_matrices_31015_meme_human_537_TFs.txt
+PWM_IDS=~/scratch/taylor_lab/predict_dnase/human_pwm_ids_sorted.txt 
+REF_FA=~/scratch/data/ref_genome/hg38.fa
+REF_IDX=~/scratch/data/ref_genome/hg38.fa.fai
+OUT_DIR=~/scratch/data/12-test_out
 
 time 12-batch.sh $DATA_DIR $PWM $PWM_IDS $REF_FA $REF_IDX $OUT_DIR
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
 """
-Trains a classifier on the given training set and assesses its performance
+Trains a open/closed chromatin classifier on the given matrix of PWM matches to open chromation regions
+and assesses its performance.
 
 Xinyu Feng, March 12 2018
 
@@ -39,6 +40,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import time
 
 """
 Evaluate performance of clf, save results to log file and as figures.
@@ -50,10 +52,13 @@ def performance(clf, X_test, y_test, out_prefix, will_plot, log):
 	test_score = clf.score(X_test, y_test)
 	y_score = clf.predict_proba(X_test)
 	auc = roc_auc_score(y_test, y_score[:, 1])
+	fpr, tpr, thresholds = roc_curve(y_test, y_score[:, 1])
+
+	np.savetxt(out_prefix + '_fpr.txt', fpr)
+	np.savetxt(out_prefix + '_tpr.txt', tpr)
 
 	if will_plot:
 
-		fpr, tpr, thresholds = roc_curve(y_test, y_score[:, 1])
 		plt.figure()
 		plt.plot(fpr, tpr)
 		plt.xlabel("False positive rate")
@@ -98,6 +103,7 @@ else:
 	p = 4
 
 log = open(out_prefix + '.log', 'w')
+log.write(time.asctime(time.localtime()) + '\n')
 log.write('Matrix file: %s\n' %matrix_filename)
 log.write('Number of true labels: %d\n' %n_true)
 if clf_type == 'rf':
@@ -109,6 +115,7 @@ log.write('Training a %s classifier...\n' %clf_type_print)
 # Loading data 
 
 X = np.loadtxt(matrix_filename, delimiter='\t')
+X = normalize(X)
 y = np.zeros((X.shape[0],), dtype=np.uint8)
 for i in range(n_true):
 	y[i] = 1
