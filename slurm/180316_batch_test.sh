@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 #SBATCH
-#SBATCH --job-name=test
+#SBATCH --job-name=data
 #SBATCH --time=1:0:0
 #SBATCH --partition=lrgmem
 #SBATCH --ntasks=10
@@ -17,7 +17,7 @@ REF_FA=~/data/xfeng17/ref_genome/hs/hg38.fa
 REF_IDX=~/data/xfeng17/ref_genome/hs/hg38.fa.fai
 OUT_DIR=~/code/predict_dnase/12-test_out
 
-12-batch.sh $DATA_DIR $PWM $PWM_IDS $REF_FA $REF_IDX $OUT_DIR
+time 12-batch.sh $DATA_DIR $PWM $PWM_IDS $REF_FA $REF_IDX $OUT_DIR
 
 if [ $? -eq 0 ]; then
   echo
