@@ -86,19 +86,21 @@ def save_ranks(clf, ranks, motif_list, out_prefix):
 
 	sort_ids = np.flip(np.argsort(ranks), 0)
 	n_motifs = motif_list.shape[0]
+	constant_row = pd.DataFrame([["const", "const", "const"]], columns=motif_list.columns)
+	motif_list_with_const = constant_row.append(motif_list)
 
 	# DNase-seq only or RNA-seq only
-	if len(ranks) == n_motifs:
-		motif_list['rank'] = ranks.T
+	if len(ranks) == n_motifs+1:
+		motif_list_with_const['rank'] = ranks.T
 
 	# DNase-seq and RNA-seq:
 	else:
-		motif_list = motif_list.append(motif_list)
-		for i in range(n_motifs, 2*n_motifs):
-			motif_list.iloc[i, 1] = motif_list.iloc[i, 1] + "*TPM"
-		motif_list['rank'] = ranks.T
+		motif_list_with_const = motif_list_with_const.append(motif_list)
+		for i in range(n_motifs+1, 2*n_motifs+1):
+			motif_list_with_const.iloc[i, 1] = motif_list_with_const.iloc[i, 1] + "*TPM"
+		motif_list_with_const['rank'] = ranks.T
 
-	to_save = motif_list.iloc[sort_ids, [1, 2, 3]]
+	to_save = motif_list_with_const.iloc[sort_ids, [1, 2, 3]]
 	to_save.to_csv(out_prefix + '_ranks.tsv', sep='\t',header=False, index=False)
 
 	return
@@ -108,6 +110,7 @@ n_true = args['n_true']
 out_prefix = args['out_prefix']
 will_plot = args['roc']
 motif_list = pd.read_csv(args['motif_list'], sep=' ', header=None)
+
 clf_type = args['classifier']
 if args['threads']:
 	p = args['threads']
@@ -128,10 +131,13 @@ log.write('Training a %s classifier...\n' %clf_type_print)
 
 X = np.loadtxt(matrix_filename, delimiter='\t')
 X = normalize(X)
+X_with_const = np.ones((X.shape[0], X.shape[1]+1))
+X_with_const[:, 1:] = X
+
 y = np.zeros((X.shape[0],), dtype=np.uint8)
 for i in range(n_true):
 	y[i] = 1
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.50)
+X_train, X_test, y_train, y_test = train_test_split(X_with_const, y, test_size=0.33)
 
 # Train classifier
 
