@@ -6,9 +6,11 @@ and assesses its performance.
 
 Xinyu Feng, April 4 2018
 
+May 1, 2019: update to scale features to unit variance and zero mean.
+
 Example usage: ./11-classifier.py -r 10-test/00-test_all_matrix.tsv 50 human_pwm_ids_sorted.txt lr 11-test/result
 Example 2: ./11-classifier.py -r -p 4 training_data/A549/noNNN/ENCFF045PYX_rep5_all_matrix.tsv 72082 human_pwm_ids_sorted.txt rf 11-test/A549_rep5_RF
-RNA-seq example: ./11-classifier.py -r ENCFF342EGB_ENCFF297CNO_TPM_matrix.tsv 56659 ../human_pwm_ids_sorted.txt lr ENCFF342EGB_ENCFF297CNO_TPM_lr
+RNA-seq example: ./11-classifier2.py -r ENCFF342EGB_ENCFF297CNO_TPM_matrix.tsv 56659 ../human_pwm_ids_sorted.txt lr ENCFF342EGB_ENCFF297CNO_TPM_lr
 """
 
 import argparse
