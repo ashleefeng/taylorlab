@@ -1,1 +1,0 @@
-# talor_lab
