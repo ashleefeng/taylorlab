@@ -15,7 +15,7 @@ Feb 19, 2018
 """
 
 if len(sys.argv) == 1:
-	print "Usage: ./02-matrix_constructor.py <file.bed> <fimo_out.txt> <pwm_ids.txt> <out_filename>"
+	print("Usage: ./02-matrix_constructor.py <file.bed> <fimo_out.txt> <pwm_ids.txt> <out_filename>")
 	quit()
 
 bed = pd.read_csv(sys.argv[1], sep='\t', header=None)
@@ -57,11 +57,11 @@ for index, row in fimo.iterrows():
 
 	test += 1
 	if test % 400000 == 0:
-		print "Done with " + str(test) + ' rows!'
+		print("Done with " + str(test) + ' rows!')
 
 	loc = row["sequence_name"] # web fimo column name
 	# loc = row["sequence name"] # local fimo
-	motif = row["# motif_id"] # web
+	motif = row["motif_id"] # web
 	# motif = row["#pattern name"]
 	tokens = loc.split(':')
 	chrN = tokens[0].lstrip('chr')

@@ -10,8 +10,8 @@ by Xinyu Feng, March 2, 2018
 """
 
 if len(sys.argv) == 1:
-	print "Usage: ./012-fasta2bed.py <in.fa> <out.bed>"
-	print "<in.fa> sequence names need to look like >chrN:start-end"
+	print("Usage: ./012-fasta2bed.py <in.fa> <out.bed>")
+	print("<in.fa> sequence names need to look like >chrN:start-end")
 	quit()
 
 fasta = open(sys.argv[1])

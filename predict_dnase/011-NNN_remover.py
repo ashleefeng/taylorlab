@@ -8,7 +8,7 @@ Xinyu Feng, March 3, 2018
 import sys
 
 if len(sys.argv) == 1:
-	print "Usage: ./011-NNN_remover.py <file.fasta> > <out.fasta>"
+	print("Usage: ./011-NNN_remover.py <file.fasta> > <out.fasta>")
 	quit()
 
 file = open(sys.argv[1])
@@ -42,6 +42,6 @@ for line in file:
 outfile.close()
 file.close()
 
-print "Removed %d sequences from a total of %d sequences." %(num_rm, total)
+print("Removed %d sequences from a total of %d sequences." %(num_rm, total))
 
 

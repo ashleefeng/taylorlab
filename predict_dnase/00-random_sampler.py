@@ -13,7 +13,7 @@ import pandas as pd
 import numpy as np
 
 if len(sys.argv) == 1:
-	print "Usage: ./00-random_sampler.py <peaks.bed> <ref.fasta.fai> <outdir>"
+	print("Usage: ./00-random_sampler.py <peaks.bed> <ref.fasta.fai> <outdir>")
 	quit()
 
 """
@@ -159,7 +159,7 @@ for index, row in peaks.iterrows():
 			repick = test_overlap(peaks, rand_chrom, chr2row, chr2lastrow, rand_start, rand_end)
 		except KeyError:
 			if rand_chrom not in missing_chr:
-				print "%s file is missing %s" %(bed_file, rand_chrom)
+				print("%s file is missing %s" %(bed_file, rand_chrom))
 				missing_chr.add(rand_chrom)
 		# if repick:
 			# print "Row " + str(counter) + " random region overlapped with a DNase peak. Need to repick."
@@ -169,7 +169,7 @@ for index, row in peaks.iterrows():
 	counter += 1
 
 	if counter % 10000 == 0:
-		print "Done with " + str(counter) + " rows."
+		print("Done with " + str(counter) + " rows.")
 
 
 	### for debugging
