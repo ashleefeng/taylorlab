@@ -3,7 +3,7 @@
 usage() {
 	cat <<__EOF__
 
-Run 10-bed2mat.sh and 11-classifier.py in batch.
+Run 11-classifier.py in batch.
 by Xinyu Feng, March 16 2018
 
 Usage: $0 <data_dir> <pwm.txt> <pwm_ids.txt> <ref.fa> <ref.fa.fai> <out_dir>
