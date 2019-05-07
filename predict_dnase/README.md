@@ -1,10 +1,10 @@
-# Predicting of chromatin accessibility from transcription factor binding motifs
+# Predicting chromatin accessibility from transcription factor binding motifs
 
 by X. A. Feng
 
 Last updated on May 6, 2019
 
-A supervised learning pipeline that trains a logistic-regression- or random-forest-based binary classifier to predict chromatin accessibility. The model is trained using experimentally measured open chromatin regions (.bed files), randomly sampled non-open chromatin region and the presence of known transcription factor (TF) motifs.
+A supervised learning pipeline that generates a logistic regression or random forest binary classifier to predict chromatin accessibility. The model is trained using experimentally measured open chromatin sites (.bed files), randomly sampled non-open chromatin sites and the presence of known transcription factor position weight matrices.
 
 Here is walk-through to train a GM12878 chromatin accessiblity classifier:
 
