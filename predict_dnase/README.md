@@ -1,10 +1,10 @@
-# Predicting of chromatin accessibility from transcription factor binding motifs
+# Predicting chromatin accessibility from transcription factor binding motifs
 
 by X. A. Feng
 
 Last updated on May 6, 2019
 
-A supervised learning pipeline that trains a logistic-regression- or random-forest-based binary classifier to predict chromatin accessibility. The model is trained using experimentally measured open chromatin regions (.bed files), randomly sampled non-open chromatin region and the presence of known transcription factor (TF) motifs.
+A supervised learning pipeline that generates a logistic regression or random forest binary classifier to predict chromatin accessibility. The model is trained using experimentally measured open chromatin sites (.bed files), randomly sampled non-open chromatin sites and the presence of known transcription factor (TF) binding motifs.
 
 Here is walk-through to train a GM12878 chromatin accessiblity classifier:
 
@@ -39,9 +39,18 @@ export PATH=$PATH:$(pwd) # add the scripts to path
 ./10-bed2mat.sh -i hg38.fa.fai -r hg38.fa -m 20180217_JASPAR2018_combined_matrices_31015_meme_human_537_TFs.txt -d human_pwm_ids_sorted.txt data/ENCFF598KWZ.bed out
 ```
 
+`20180217_JASPAR2018_combined_matrices_31015_meme_human_537_TFs.txt` contains position weight matrices of 537 human TF motifs from the JASPAR database.
+
 ## Train a logistic regression classifier
 
 ```sh
 N_TRUE="`wc -l < "out/ENCFF598KWZ_peaks_matrix.tsv"`"
 ./11-classifier2.py -r out/ENCFF598KWZ_all_matrix.tsv $N_TRUE human_pwm_ids_sorted.txt lr out/ENCFF598KWZ_lr_results
 ```
+
+## Train a random forest classifier
+
+```sh
+./11-classifier2.py -r out/ENCFF598KWZ_all_matrix.tsv $N_TRUE human_pwm_ids_sorted.txt rf out/ENCFF598KWZ_rf_results
+```
+
