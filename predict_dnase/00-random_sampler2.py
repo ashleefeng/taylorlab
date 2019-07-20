@@ -13,11 +13,79 @@ import pandas as pd
 import numpy as np
 
 if len(sys.argv) == 1:
-	print("Usage: ./00-random_sampler.py <peaks.bed> <ref.fasta.fai> <outdir>")
+	print("Usage: ./00-random_sampler.py <peaks.bed> <ref.fasta.fai> <transcript.gtf> <outdir>")
 	quit()
 
 
 NUM_CHROM = 23
+
+"""
+Make a dict from chromosome name to list of TSS
+input: transcript_gtf_filename: str
+output: {str:[int]} - chromosome name to list of tss
+"""
+
+def get_chr2tss(transcript_gtf_filename):
+
+	chr2tss = {}
+	
+	gtf_file = open(transcript_gtf_filename)
+	
+	for line in gtf_file:
+
+		if line[0] == '#': # skip headers
+			continue
+
+		line = line.rstrip('\n')
+		cols = line.split('\t')
+		chrom_name = cols[0]
+		feature = cols[2]
+
+		if feature == "transcript":
+
+			tss = int(cols[3])
+	
+			if chrom_name not in chr2tss:
+				chr2tss[chrom_name] = [tss]
+	
+			else:
+				chr2tss[chrom_name].append(tss)
+
+	# sort the list of TSS
+	for chrom in chr2tss.keys():
+		chr2tss[chrom] = sorted(chr2tss[chrom])
+
+	gtf_file.close()
+
+	return chr2tss
+
+"""
+Calculate the distance from given site to the closest TSS
+input: chr_name - str, name of chromosome
+       start - int, location of interest
+       chr2tss - {str:[int]}, map from chromosome name to sorted list of TSS
+output: int - distance from given location to the closest TSS
+
+"""
+def get_dist2tss(chr_name, start, chr2tss):
+
+	tss_list = chr2tss[chr_name]
+	prev_tss = 0
+
+	# xxx can be optimized to use binary search
+	for tss in tss_list:
+
+		if tss < start:
+			prev_tss = tss
+		
+		else:
+			return min(start - prev_tss, tss - start)
+
+	# error if start > largest tss
+	return -1
+
+
+
 
 """
 Randomly sample a region from the genome
@@ -59,7 +127,7 @@ def get_random_region_TSS(n2chr, chr2len, size, open2tss_dist, chr2tss):
 	# pick tss
 	tss_list = chr2tss[chrom]
 	tssID = np.random.randint(len(tss_list))
-	tss = tss_list(tssID)
+	tss = tss_list[tssID]
 
 	start = tss + open2tss_dist
 	end = start + size - 1
@@ -129,7 +197,8 @@ def test_overlap(peaks, rand_chrom, chr2row, chr2lastrow, target_start, target_e
 # read peaks file and ref genome
 bed_file = sys.argv[1]
 ref_index_file = sys.argv[2]
-outdir = sys.argv[3]
+transcript_gtf_filename = sys.argv[3]
+outdir = sys.argv[4]
 
 peaks = pd.read_csv(bed_file, sep='\t', header=None, \
 	names=["chrom", "start", "end", "name", "score", "strand", "thickStart",\
@@ -182,6 +251,8 @@ for i in range(num_peaks):
 	   (row["chrom"] in chr_set):
 	   chr2lastrow[row["chrom"]] = j 
 
+chr2tss = get_chr2tss(transcript_gtf_filename)
+
 # randomly sample genome to generate negative set
 
 nonpeaks = pd.DataFrame(index=range(num_peaks), columns=["chrom", "start", "end"])
@@ -190,12 +261,20 @@ missing_chr = set()
 
 for index, row in peaks.iterrows():
 
+	chr_name = row["chrom"]
+	start = row["start"]
+
+	open2tss_dist = get_dist2tss(chr_name, start, chr2tss)
+	print('open', open2tss_dist)
+
 	dhs_len = row["end"] - row["start"] + 1
 	repick = True
 
 	while repick:
 
-		random_chrom, random_start, random_end = get_random_region(n2chr, chr2len, dhs_len)
+		rand_chrom, rand_start, rand_end = get_random_region_TSS(n2chr, chr2len, dhs_len, open2tss_dist, chr2tss)
+		#rand_chrom, rand_start, rand_end = get_random_region(n2chr, chr2len, dhs_len)
+		print('sampled', get_dist2tss(rand_chrom, rand_start, chr2tss))
 
 		# check if the random region overlaps with DHS
 		# if yes, then repick
