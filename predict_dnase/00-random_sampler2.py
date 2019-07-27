@@ -2,7 +2,7 @@
 
 """
 Usage: ./00-random_sampler.py <file.bed> <ref.fasta.fai> <outdir>
-Output: outdir/file_peaks_sorted.bed, outidir/file_nonpeaks.bed
+Output: outdir/file_peaks_sorted.bed, outidir/file_nonpeaks_temp.bed
 X. Feng xfeng17@jhu.edu
 July 17, 2019
 """
@@ -13,7 +13,7 @@ import pandas as pd
 import numpy as np
 
 if len(sys.argv) == 1:
-	print("Usage: ./00-random_sampler.py <peaks.bed> <ref.fasta.fai> <transcript.gtf> <outdir>")
+	print("Usage: ./00-random_sampler2.py <peaks.bed> <ref.fasta.fai> <transcript.gtf> <outdir>")
 	quit()
 
 
@@ -83,9 +83,6 @@ def get_dist2tss(chr_name, start, chr2tss):
 
 	# error if start > largest tss
 	return -1
-
-
-
 
 """
 Randomly sample a region from the genome
@@ -258,23 +255,25 @@ chr2tss = get_chr2tss(transcript_gtf_filename)
 nonpeaks = pd.DataFrame(index=range(num_peaks), columns=["chrom", "start", "end"])
 counter = 0
 missing_chr = set()
+open2tss_list = np.zeros((num_peaks, 1), dtype=np.uint32)
+closed2tss_list = np.zeros((num_peaks, 1), dtype=np.uint32)
 
 for index, row in peaks.iterrows():
 
 	chr_name = row["chrom"]
 	start = row["start"]
 
-	open2tss_dist = get_dist2tss(chr_name, start, chr2tss)
-	print('open', open2tss_dist)
+	open2tss = get_dist2tss(chr_name, start, chr2tss)
+	open2tss_list[index] = open2tss
 
 	dhs_len = row["end"] - row["start"] + 1
 	repick = True
 
 	while repick:
 
-		rand_chrom, rand_start, rand_end = get_random_region_TSS(n2chr, chr2len, dhs_len, open2tss_dist, chr2tss)
+		rand_chrom, rand_start, rand_end = get_random_region_TSS(n2chr, chr2len, dhs_len, open2tss, chr2tss)
 		#rand_chrom, rand_start, rand_end = get_random_region(n2chr, chr2len, dhs_len)
-		print('sampled', get_dist2tss(rand_chrom, rand_start, chr2tss))
+		closed2tss = get_dist2tss(rand_chrom, rand_start, chr2tss)
 
 		# check if the random region overlaps with DHS
 		# if yes, then repick
@@ -285,6 +284,8 @@ for index, row in peaks.iterrows():
 			if rand_chrom not in missing_chr:
 				print("%s file is missing %s" %(bed_file, rand_chrom))
 				missing_chr.add(rand_chrom)
+
+	closed2tss_list[index] = closed2tss
 
 
 	nonpeaks.iloc[counter] = [rand_chrom, rand_start, rand_end]
@@ -298,3 +299,6 @@ for index, row in peaks.iterrows():
 bed_base = basename(bed_file).rstrip(".bed")
 nonpeaks.to_csv(outdir + "/" + bed_base + "_nonpeaks_temp.bed", sep='\t', header=False, index=False)
 peaks.to_csv(outdir + "/" + bed_base + "_peaks_sorted.bed", sep='\t', header=False, index=False)
+
+# np.savetxt(outdir + "/" + bed_base + "_open2tss.csv", open2tss_list, fmt='%d')
+# np.savetxt(outdir + "/" + bed_base + "_closed2tss.csv", closed2tss_list, fmt='%d')
