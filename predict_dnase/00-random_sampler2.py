@@ -79,10 +79,11 @@ def get_dist2tss(chr_name, start, chr2tss):
 			prev_tss = tss
 		
 		else:
-			return min(start - prev_tss, tss - start)
-
-	# error if start > largest tss
-	return -1
+			if abs(start - prev_tss) < abs(tss - start):
+				return start - prev_tss
+			else:
+				return start - tss
+	return start - tss
 
 """
 Randomly sample a region from the genome
@@ -262,24 +263,39 @@ for index, row in peaks.iterrows():
 
 	chr_name = row["chrom"]
 	start = row["start"]
-
-	open2tss = get_dist2tss(chr_name, start, chr2tss)
-	open2tss_list[index] = open2tss
+	use_random = False
+	
+	if chr_name not in chr2tss.keys():
+		print("%s not found" %chr_name)
+		use_random = True
+	else:
+		open2tss = get_dist2tss(chr_name, start, chr2tss)
+		open2tss_list[index] = open2tss
 
 	dhs_len = row["end"] - row["start"] + 1
 	repick = True
 
 	while repick:
 
-		rand_chrom, rand_start, rand_end = get_random_region_TSS(n2chr, chr2len, dhs_len, open2tss, chr2tss)
-		#rand_chrom, rand_start, rand_end = get_random_region(n2chr, chr2len, dhs_len)
+		if not use_random:
+			rand_chrom, rand_start, rand_end = get_random_region_TSS(n2chr, chr2len, dhs_len, open2tss, chr2tss)
+		
+		else:
+			rand_chrom, rand_start, rand_end = get_random_region(n2chr, chr2len, dhs_len)
+		
+		if rand_start < 0:
+			repick = True
+			continue
+
 		closed2tss = get_dist2tss(rand_chrom, rand_start, chr2tss)
 
 		# check if the random region overlaps with DHS
 		# if yes, then repick
 
+	
 		try:
 			repick = test_overlap(peaks, rand_chrom, chr2row, chr2lastrow, rand_start, rand_end)
+		        
 		except KeyError:
 			if rand_chrom not in missing_chr:
 				print("%s file is missing %s" %(bed_file, rand_chrom))

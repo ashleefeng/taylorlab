@@ -61,7 +61,7 @@ for index, row in fimo.iterrows():
 
 	loc = row["sequence_name"] # web fimo column name
 	# loc = row["sequence name"] # local fimo
-	motif = row["motif_id"] # web
+	motif = row["# motif_id"] # web
 	# motif = row["#pattern name"]
 	tokens = loc.split(':')
 	chrN = tokens[0].lstrip('chr')
