@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Usage: ./00-random_sampler.py <file.bed> <ref.fasta.fai> <outdir>
+Sample non-peaks from known dnase peaks with the same distance distribution to transcription start sites
 Output: outdir/file_peaks_sorted.bed, outidir/file_nonpeaks_temp.bed
 X. Feng xfeng17@jhu.edu
 July 17, 2019
@@ -80,10 +80,10 @@ def get_dist2tss(chr_name, start, chr2tss):
 		
 		else:
 			if abs(start - prev_tss) < abs(tss - start):
-				return start - prev_tss
+				return abs(start - prev_tss)
 			else:
-				return start - tss
-	return start - tss
+				return abs(start - tss)
+	return abs(start - tss)
 
 """
 Randomly sample a region from the genome
@@ -316,5 +316,5 @@ bed_base = basename(bed_file).rstrip(".bed")
 nonpeaks.to_csv(outdir + "/" + bed_base + "_nonpeaks_temp.bed", sep='\t', header=False, index=False)
 peaks.to_csv(outdir + "/" + bed_base + "_peaks_sorted.bed", sep='\t', header=False, index=False)
 
-# np.savetxt(outdir + "/" + bed_base + "_open2tss.csv", open2tss_list, fmt='%d')
-# np.savetxt(outdir + "/" + bed_base + "_closed2tss.csv", closed2tss_list, fmt='%d')
+np.savetxt(outdir + "/" + bed_base + "_open2tss.csv", open2tss_list, fmt='%d')
+np.savetxt(outdir + "/" + bed_base + "_closed2tss.csv", closed2tss_list, fmt='%d')

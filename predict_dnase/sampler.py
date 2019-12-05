@@ -24,17 +24,21 @@ file.close()
 sample_rate = total/n
 #print(sample_rate)
 
-file = open(filename)
+if sample_rate == 0:
+	print("total/n = 0")
+else:
 
-counter = 0
-for line in file:
-	l = line.rstrip('\n')
-	if counter % sample_rate == 0:
-		print(l)
-	elif counter == total-1:
-		print(l)
-	counter += 1
+	file = open(filename)
+
+	counter = 0
+	for line in file:
+		l = line.rstrip('\n')
+		if counter % sample_rate == 0:
+			print(l)
+		elif counter == total-1:
+			print(l)
+		counter += 1
 
 
-file.close()
+	file.close()
 
