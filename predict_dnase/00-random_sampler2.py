@@ -316,5 +316,5 @@ bed_base = basename(bed_file).rstrip(".bed")
 nonpeaks.to_csv(outdir + "/" + bed_base + "_nonpeaks_temp.bed", sep='\t', header=False, index=False)
 peaks.to_csv(outdir + "/" + bed_base + "_peaks_sorted.bed", sep='\t', header=False, index=False)
 
-np.savetxt(outdir + "/" + bed_base + "_open2tss.csv", open2tss_list, fmt='%d')
-np.savetxt(outdir + "/" + bed_base + "_closed2tss.csv", closed2tss_list, fmt='%d')
+np.savetxt(outdir + "/" + bed_base + "_open2tss_random.csv", open2tss_list, fmt='%d')
+np.savetxt(outdir + "/" + bed_base + "_closed2tss_random.csv", closed2tss_list, fmt='%d')
