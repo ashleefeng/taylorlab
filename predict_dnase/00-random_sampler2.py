@@ -289,10 +289,15 @@ for index, row in peaks.iterrows():
 
 		closed2tss = get_dist2tss(rand_chrom, rand_start, chr2tss)
 
+        # if sampled region is closer to another tss, repick (will bias towards smaller distances without this step)
+
+        if closed2tss < open2tss:
+            repick = True
+            continue
+
 		# check if the random region overlaps with DHS
 		# if yes, then repick
 
-	
 		try:
 			repick = test_overlap(peaks, rand_chrom, chr2row, chr2lastrow, rand_start, rand_end)
 		        
