@@ -1,0 +1,1608 @@
+Checking system for required executables...
+Constructing matrices for file...
+/home-4/xfeng17@jhu.edu/code/predict_dnase/tss_test3/K562_rep2.bed
+/home-4/xfeng17@jhu.edu/code/predict_dnase/tss_test3/K562_rep1.bed
+Checking system for required executables...
+Checking system for required executables...
+Generating training datasets...
+Generating training datasets...
+Done with 10000 rows.
+Done with 20000 rows.
+Done with 30000 rows.
+chr11_KI270721v1_random not found
+chr11_KI270721v1_random not found
+chr11_KI270721v1_random not found
+chr11_KI270721v1_random not found
+Done with 40000 rows.
+Done with 50000 rows.
+chr14_GL000009v2_random not found
+chr14_GL000009v2_random not found
+chr14_GL000009v2_random not found
+chr14_GL000009v2_random not found
+chr14_GL000009v2_random not found
+chr14_GL000009v2_random not found
+chr14_GL000009v2_random not found
+chr14_GL000009v2_random not found
+chr14_GL000009v2_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_KI270722v1_random not found
+chr14_KI270722v1_random not found
+chr14_KI270722v1_random not found
+chr14_KI270722v1_random not found
+chr14_KI270723v1_random not found
+chr14_KI270723v1_random not found
+chr14_KI270723v1_random not found
+chr14_KI270723v1_random not found
+chr14_KI270723v1_random not found
+chr14_KI270724v1_random not found
+chr14_KI270726v1_random not found
+chr15_KI270727v1_random not found
+chr15_KI270727v1_random not found
+chr15_KI270727v1_random not found
+Done with 60000 rows.
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+Done with 70000 rows.
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_KI270729v1_random not found
+Done with 80000 rows.
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270707v1_random not found
+chr1_KI270708v1_random not found
+chr1_KI270708v1_random not found
+chr1_KI270708v1_random not found
+chr1_KI270709v1_random not found
+chr1_KI270709v1_random not found
+chr1_KI270709v1_random not found
+chr1_KI270709v1_random not found
+chr1_KI270709v1_random not found
+chr1_KI270709v1_random not found
+chr1_KI270709v1_random not found
+chr1_KI270709v1_random not found
+chr1_KI270709v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not Done with 10000 rows.
+Done with 20000 rows.
+Done with 30000 rows.
+Done with 40000 rows.
+Done with 50000 rows.
+chr11_KI270721v1_random not found
+chr11_KI270721v1_random not found
+chr11_KI270721v1_random not found
+chr11_KI270721v1_random not found
+chr11_KI270721v1_random not found
+chr11_KI270721v1_random not found
+chr11_KI270721v1_random not found
+chr11_KI270721v1_random not found
+chr11_KI270721v1_random not found
+Done with 60000 rows.
+Done with 70000 rows.
+Done with 80000 rows.
+chr14_GL000009v2_random not found
+chr14_GL000009v2_random not found
+chr14_GL000009v2_random not found
+chr14_GL000009v2_random not found
+chr14_GL000009v2_random not found
+chr14_GL000009v2_random not found
+chr14_GL000009v2_random not found
+chr14_GL000009v2_random not found
+chr14_GL000009v2_random not found
+chr14_GL000009v2_random not found
+chr14_GL000009v2_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000194v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_GL000225v1_random not found
+chr14_KI270722v1_random not found
+chr14_KI270722v1_random not found
+chr14_KI270722v1_random not found
+chr14_KI270722v1_random not found
+chr14_KI270722v1_random not found
+chr14_KI270722v1_random not found
+chr14_KI270723v1_random not found
+chr14_KI270723v1_random not found
+chr14_KI270724v1_random not found
+chr14_KI270726v1_random not found
+chr15_KI270727v1_random not found
+chr15_KI270727v1_random not found
+chr15_KI270727v1_random not found
+chr15_KI270727v1_random not found
+chr15_KI270727v1_random not found
+chr15_KI270727v1_random not found
+chr15_KI270727v1_random not found
+chr15_KI270727v1_random not found
+chr15_KI270727v1_random not found
+chr15_KI270727v1_random not found
+chr15_KI270727v1_random not found
+chr15_KI270727v1_random not found
+Done with 90000 rows.
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+chr16_KI270728v1_random not found
+Done with 100000 rows.
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205vfound
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+Done with 90000 rows.
+Done with 100000 rows.
+chr22_KI270731v1_random not found
+chr22_KI270731v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270737v1_random not found
+chr22_KI270737v1_random not found
+chr22_KI270738v1_random not found
+chr22_KI270738v1_random not found
+chr22_KI270738v1_random not found
+Done with 110000 rows.
+chr3_GL000221v1_random not found
+Done with 120000 rows.
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+Done with 130000 rows.
+Done with 140000 rows.
+Done with 150000 rows.
+Done with 160000 rows.
+chr9_KI270717v1_random not found
+chr9_KI270718v1_random not found
+chr9_KI270718v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270720v1_random not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000214v1 not found
+chrUn_GL000214v1 not found
+chrUn_GL000214v1 not found
+chrUn_GL000216v2 not found
+chrUn_GL000216v2 not found
+chrUn_GL000216v2 not found
+chrUn_GL000216v2 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000220v1 not found
+chrUn_GL000220v1 not found
+chrUn_GL000220v1 not found
+chrUn_GL000220v1 not found
+chrUn_GL000220v1 not found
+chrUn_GL000220v1 not found
+chrUn_GL000220v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270519v1 not found
+chrUn_KI270519v1 not found
+chrUn_KI270519v1 not found
+chrUn_KI270589v1 not found
+chrUn_KI270589v1 not found
+chrUn_KI270589v1 not found
+chrUn_KI270589v1 not found
+chrUn_KI270589v1 not found
+chrUn_KI270589v1 not found
+chrUn_KI270589v1 not found
+chrUn_KI270591v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270745v1 not found
+chrUn_KI270745v1 not found
+chrUn_KI270745v1 not found
+chrUn_KI270745v1 not found
+chrUn_KI270745v1 not found
+chrUn_KI270751v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+Done with 170000 rows.
+Feature (chrY:57263146-57263296) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57229549-57229699) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrX:156068581-156068731) beyond the length of chrX size (156040895 bp).  Skipping.
+Feature (chrX:156051184-156051334) beyond the length of chrX size (156040895 bp).  Skipping.
+Feature (chrY:57238888-57239038) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chr15:102003711-102003861) beyond the length of chr15 size (101991189 bp).  Skipping.
+Feature (chr12:133303634-133303784) beyond the length of chr12 size (133275309 bp).  Skipping.
+Feature (chrY:57233349-57233499) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57268197-57268347) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chr21:46715898-46716048) beyond the length of chr21 size (46709983 bp).  Skipping.
+Feature (chrY:57240652-57240802) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chr21:46716039-46716189) beyond the length of chr21 size (46709983 bp).  Skipping.
+Feature (chrY:57228797-57228947) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chr13:114404793-114404943) beyond the length of chr13 size (114364328 bp).  Skipping.
+Feature (chr8:145162805-145162955) beyond the length of chr8 size (145138636 bp).  Skipping.
+Feature (chrX:156058997-156059147) beyond the length of chrX size (156040895 bp).  Skipping.
+Feature (chr21:46761195-46761345) beyond the length of chr21 size (46709983 bp).  Skipping.
+Feature (chrY:57264354-57264504) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chr13:114412593-114412743) beyond the length of chr13 size (114364328 bp).  Skipping.
+Feature (chr15:102010746-102010896) beyond the length of chr15 size (101991189 bp).  Skipping.
+Feature (chr19:58771509-58771659) beyond the length of chr19 size (58617616 bp).  Skipping.
+Feature (chrX:156060800-156060950) beyond the length of chrX size (156040895 bp).  Skipping.
+Removed 216 sequences from a total of 171812 sequences.
+Running fimo on /home-4/xfeng17@jhu.edu/code/predict_dnase/tss_test3/K562_rep2_peaks_sorted.fa...
+Warning: text mode turns off computation of q-values
+2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_GL000205v2_random not found
+chr17_KI270729v1_random not found
+chr17_KI270729v1_random not found
+chr17_KI270729v1_random not found
+chr17_KI270729v1_random not found
+chr17_KI270729v1_random not found
+chr17_KI270729v1_random not found
+chr17_KI270730v1_random not found
+chr17_KI270730v1_random not found
+Done with 110000 rows.
+Done with 120000 rows.
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270706v1_random not found
+chr1_KI270707v1_random not found
+chr1_KI270707v1_random not found
+chr1_KI270708v1_random not found
+chr1_KI270708v1_random not found
+chr1_KI270708v1_random not found
+chr1_KI270708v1_random not found
+chr1_KI270708v1_random not found
+chr1_KI270708v1_random not found
+chr1_KI270708v1_random not found
+chr1_KI270708v1_random not found
+chr1_KI270709v1_random not found
+chr1_KI270709v1_random not found
+chr1_KI270709v1_random not found
+chr1_KI270709v1_random not found
+chr1_KI270710v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270711v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270712v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270713v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+chr1_KI270714v1_random not found
+Done with 130000 rows.
+Done with 140000 rows.
+Done with 150000 rows.
+Done with 160000 rows.
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270733v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270734v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270736v1_random not found
+chr22_KI270737v1_random not found
+chr22_KI270737v1_random not found
+chr22_KI270737v1_random not found
+chr22_KI270737v1_random not found
+chr22_KI270737v1_random not found
+chr22_KI270738v1_random not found
+chr22_KI270738v1_random not found
+chr22_KI270738v1_random not found
+chr22_KI270738v1_random not found
+chr22_KI270738v1_random not found
+chr22_KI270738v1_random not found
+chr22_KI270738v1_random not found
+chr22_KI270738v1_random not found
+chr22_KI270738v1_random not found
+chr22_KI270738v1_random not found
+chr22_KI270738v1_random not found
+Done with 170000 rows.
+chr3_GL000221v1_random not found
+chr3_GL000221v1_random not found
+Done with 180000 rows.
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+chr4_GL000008v2_random not found
+Done with 190000 rows.
+Done with 200000 rows.
+chr5_GL000208v1_random not found
+chr5_GL000208v1_random not found
+chr5_GL000208v1_random not found
+chr5_GL000208v1_random not found
+Done with 210000 rows.
+Done with 220000 rows.
+Done with 230000 rows.
+Done with 240000 rows.
+Done with 250000 rows.
+chr9_KI270717v1_random not found
+chr9_KI270718v1_random not found
+chr9_KI270718v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270719v1_random not found
+chr9_KI270720v1_random not found
+chr9_KI270720v1_random not found
+chr9_KI270720v1_random not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000195v1 not found
+chrUn_GL000213v1 not found
+chrUn_GL000214v1 not found
+chrUn_GL000214v1 not found
+chrUn_GL000214v1 not found
+chrUn_GL000214v1 not found
+chrUn_GL000214v1 not found
+chrUn_GL000214v1 not found
+chrUn_GL000214v1 not found
+chrUn_GL000214v1 not found
+chrUn_GL000214v1 not found
+chrUn_GL000214v1 not found
+chrUn_GL000214v1 not found
+chrUn_GL000214v1 not found
+chrUn_GL000214v1 not found
+chrUn_GL000216v2 not found
+chrUn_GL000216v2 not found
+chrUn_GL000216v2 not found
+chrUn_GL000216v2 not found
+chrUn_GL000216v2 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000218v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000219v1 not found
+chrUn_GL000220v1 not found
+chrUn_GL000220v1 not found
+chrUn_GL000220v1 not found
+chrUn_GL000220v1 not found
+chrUn_GL000220v1 not found
+chrUn_GL000220v1 not found
+chrUn_GL000220v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_GL000224v1 not found
+chrUn_KI270330v1 not found
+chrUn_KI270435v1 not found
+chrUn_KI270435v1 not found
+chrUn_KI270435v1 not found
+chrUn_KI270435v1 not found
+chrUn_KI270435v1 not found
+chrUn_KI270435v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270438v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270442v1 not found
+chrUn_KI270467v1 not found
+chrUn_KI270467v1 not found
+chrUn_KI270467v1 not found
+chrUn_KI270467v1 not found
+chrUn_KI270507v1 not found
+chrUn_KI270511v1 not found
+chrUn_KI270519v1 not found
+chrUn_KI270519v1 not found
+chrUn_KI270519v1 not found
+chrUn_KI270519v1 not found
+chrUn_KI270519v1 not found
+chrUn_KI270519v1 not found
+chrUn_KI270538v1 not found
+chrUn_KI270589v1 not found
+chrUn_KI270589v1 not found
+chrUn_KI270589v1 not found
+chrUn_KI270589v1 not found
+chrUn_KI270589v1 not found
+chrUn_KI270589v1 not found
+chrUn_KI270591v1 not found
+chrUn_KI270591v1 not found
+chrUn_KI270741v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270742v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270743v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270744v1 not found
+chrUn_KI270745v1 not found
+chrUn_KI270745v1 not found
+chrUn_KI270745v1 not found
+chrUn_KI270745v1 not found
+chrUn_KI270745v1 not found
+chrUn_KI270745v1 not found
+chrUn_KI270750v1 not found
+chrUn_KI270750v1 not found
+chrUn_KI270750v1 not found
+chrUn_KI270750v1 not found
+chrUn_KI270750v1 not found
+chrUn_KI270750v1 not found
+chrUn_KI270750v1 not found
+chrUn_KI270750v1 not found
+chrUn_KI270750v1 not found
+chrUn_KI270750v1 not found
+chrUn_KI270750v1 not found
+chrUn_KI270751v1 not found
+chrUn_KI270751v1 not found
+chrUn_KI270751v1 not found
+chrUn_KI270751v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270754v1 not found
+chrUn_KI270756v1 not found
+chrUn_KI270757v1 not found
+chrUn_KI270757v1 not found
+chrUn_KI270757v1 not found
+Done with 260000 rows.
+Feature (chrY:57317058-57317208) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chr13:114390585-114390735) beyond the length of chr13 size (114364328 bp).  Skipping.
+Feature (chr21:46749194-46749344) beyond the length of chr21 size (46709983 bp).  Skipping.
+Feature (chrY:57227308-57227458) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57236961-57237111) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57617378-57617528) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57233429-57233579) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57231139-57231289) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57233218-57233368) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57241173-57241323) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57227476-57227626) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57498494-57498644) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chr13:114410823-114410973) beyond the length of chr13 size (114364328 bp).  Skipping.
+Feature (chrY:57228794-57228944) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chr15:101991330-101991480) beyond the length of chr15 size (101991189 bp).  Skipping.
+Feature (chrY:57241692-57241842) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrX:156042546-156042696) beyond the length of chrX size (156040895 bp).  Skipping.
+Feature (chrY:57249719-57249869) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57250435-57250585) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chr13:114561457-114561607) beyond the length of chr13 size (114364328 bp).  Skipping.
+Feature (chrY:57228836-57228986) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57256912-57257062) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57229341-57229491) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57236715-57236865) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57254700-57254850) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57246743-57246893) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57251010-57251160) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57248583-57248733) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57327573-57327723) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57232777-57232927) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57253720-57253870) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chr21:46709985-46710135) beyond the length of chr21 size (46709983 bp).  Skipping.
+Feature (chr2:242263637-242263787) beyond the length of chr2 size (242193529 bp).  Skipping.
+Feature (chr13:114368118-114368268) beyond the length of chr13 size (114364328 bp).  Skipping.
+Feature (chrY:57268118-57268268) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57244565-57244715) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57285359-57285509) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrX:156058712-156058862) beyond the length of chrX size (156040895 bp).  Skipping.
+Feature (chr21:46714600-46714750) beyond the length of chr21 size (46709983 bp).  Skipping.
+Feature (chrY:57330182-57330332) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chr4:190239324-190239474) beyond the length of chr4 size (190214555 bp).  Skipping.
+Feature (chrY:57323467-57323617) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57236579-57236729) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57242854-57243004) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57255399-57255549) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57322382-57322532) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chr12:133283265-133283415) beyond the length of chr12 size (133275309 bp).  Skipping.
+Feature (chrX:156043386-156043536) beyond the length of chrX size (156040895 bp).  Skipping.
+Feature (chrY:57251215-57251365) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chrY:57278814-57278964) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chr4:190237972-190238122) beyond the length of chr4 size (190214555 bp).  Skipping.
+Feature (chrY:57492216-57492366) beyond the length of chrY size (57227415 bp).  Skipping.
+Feature (chr19:58622043-58622193) beyond the length of chr19 size (58617616 bp).  Skipping.
+Removed 400 sequences from a total of 263523 sequences.
+Running fimo on /home-4/xfeng17@jhu.edu/code/predict_dnase/tss_test3/K562_rep1_peaks_sorted.fa...
+Warning: text mode turns off computation of q-values
+Running fimo on /home-4/xfeng17@jhu.edu/code/predict_dnase/tss_test3/K562_rep2_nonpeaks.fa...
+Warning: text mode turns off computation of q-values
+Running fimo on /home-4/xfeng17@jhu.edu/code/predict_dnase/tss_test3/K562_rep1_nonpeaks.fa...
+Warning: text mode turns off computation of q-values
+Constructing matrix for peaks...
+Done with 400000 rows!
+Done with 800000 rows!
+Done with 1200000 rows!
+Done with 1600000 rows!
+Done with 2000000 rows!
+Done with 2400000 rows!
+Done with 2800000 rows!
+Done with 3200000 rows!
+Done with 3600000 rows!
+Done with 4000000 rows!
+Done with 4400000 rows!
+Done with 4800000 rows!
+Constructing matrix for nonpeaks...
+Done with 400000 rows!
+Done with 800000 rows!
+Done with 1200000 rows!
+Done with 1600000 rows!
+Done with 2000000 rows!
+Done with 2400000 rows!
+Done with 2800000 rows!
+Done with 3200000 rows!
+Done with 3600000 rows!
+Contatenating two matrices...
+
+Results:
+   /home-4/xfeng17@jhu.edu/code/predict_dnase/tss_test3/K562_rep2_peaks_matrix.tsv
+   /home-4/xfeng17@jhu.edu/code/predict_dnase/tss_test3/K562_rep2_nonpeaks_matrix.tsv
+   /home-4/xfeng17@jhu.edu/code/predict_dnase/tss_test3/K562_rep2_all_matrix.tsv
+
+Done with classification for /home-4/xfeng17@jhu.edu/code/predict_dnase/tss_test3/K562_rep2.bed!
+Constructing matrix for peaks...
+Done with 400000 rows!
+Done with 800000 rows!
+Done with 1200000 rows!
+Done with 1600000 rows!
+Done with 2000000 rows!
+Done with 2400000 rows!
+Done with 2800000 rows!
+Done with 3200000 rows!
+Done with 3600000 rows!
+Done with 4000000 rows!
+Done with 4400000 rows!
+Done with 4800000 rows!
+Done with 5200000 rows!
+Done with 5600000 rows!
+Done with 6000000 rows!
+Done with 6400000 rows!
+Done with 6800000 rows!
+Done with 7200000 rows!
+Constructing matrix for nonpeaks...
+Done with 400000 rows!
+Done with 800000 rows!
+Done with 1200000 rows!
+Done with 1600000 rows!
+Done with 2000000 rows!
+Done with 2400000 rows!
+Done with 2800000 rows!
+Done with 3200000 rows!
+Done with 3600000 rows!
+Done with 4000000 rows!
+Done with 4400000 rows!
+Done with 4800000 rows!
+Done with 5200000 rows!
+Contatenating two matrices...
+
+Results:
+   /home-4/xfeng17@jhu.edu/code/predict_dnase/tss_test3/K562_rep1_peaks_matrix.tsv
+   /home-4/xfeng17@jhu.edu/code/predict_dnase/tss_test3/K562_rep1_nonpeaks_matrix.tsv
+   /home-4/xfeng17@jhu.edu/code/predict_dnase/tss_test3/K562_rep1_all_matrix.tsv
+
+Done with classification for /home-4/xfeng17@jhu.edu/code/predict_dnase/tss_test3/K562_rep1.bed!
+
+real	551m25.640s
+user	535m48.285s
+sys	15m6.583s
+
+Done!

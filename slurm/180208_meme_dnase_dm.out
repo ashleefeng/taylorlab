@@ -1,0 +1,16 @@
+Failed to open the output of meme to parse motifs.
+Use of uninitialized value in numeric gt (>) at /cm/shared/apps/meme/4.11.3/bin/meme-chip line 1012.
+Use of uninitialized value in numeric gt (>) at /cm/shared/apps/meme/4.11.3/bin/meme-chip line 1367.
+Use of uninitialized value $value in concatenation (.) or string at /cm/shared/apps/meme/4.11.3/lib/perl/JsonWr.pm line 147, <__ANONIO__> line 6.
+Value  is not a number! at /cm/shared/apps/meme/4.11.3/lib/perl/JsonWr.pm line 147, <__ANONIO__> line 6.
+	JsonWr::num_value(JsonWr=HASH(0x177f950), undef, "ALLOW_INF", 0) called at /cm/shared/apps/meme/4.11.3/lib/perl/JsonWr.pm line 237
+	JsonWr::num_prop(JsonWr=HASH(0x177f950), "meme", undef) called at /cm/shared/apps/meme/4.11.3/bin/meme-chip line 1527
+	main::output(HASH(0x8edf98), HASH(0x171a800), HASH(0x1719dc8), HASH(0x171a368), HASH(0x1719fa8), undef, ARRAY(0x1708c70), ARRAY(0x1708b68), ARRAY(0x16cc410), ...) called at /cm/shared/apps/meme/4.11.3/bin/meme-chip line 1628
+	main::main() called at /cm/shared/apps/meme/4.11.3/bin/meme-chip line 141
+ at /cm/shared/apps/meme/4.11.3/bin/meme-chip line 98, <__ANONIO__> line 6.
+	main::__ANON__("Value  is not a number! at /cm/shared/apps/meme/4.11.3/lib/pe"...) called at /cm/shared/apps/perl/5.22.1/lib/5.22.1/Carp.pm line 167
+	Carp::confess("Value  is not a number!") called at /cm/shared/apps/meme/4.11.3/lib/perl/JsonWr.pm line 147
+	JsonWr::num_value(JsonWr=HASH(0x177f950), undef, "ALLOW_INF", 0) called at /cm/shared/apps/meme/4.11.3/lib/perl/JsonWr.pm line 237
+	JsonWr::num_prop(JsonWr=HASH(0x177f950), "meme", undef) called at /cm/shared/apps/meme/4.11.3/bin/meme-chip line 1527
+	main::output(HASH(0x8edf98), HASH(0x171a800), HASH(0x1719dc8), HASH(0x171a368), HASH(0x1719fa8), undef, ARRAY(0x1708c70), ARRAY(0x1708b68), ARRAY(0x16cc410), ...) called at /cm/shared/apps/meme/4.11.3/bin/meme-chip line 1628
+	main::main() called at /cm/shared/apps/meme/4.11.3/bin/meme-chip line 141

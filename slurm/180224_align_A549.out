@@ -1,0 +1,14 @@
+Aligning to ref genome...
+Time loading reference: 00:00:03
+Time loading forward index: 00:00:03
+Time loading mirror index: 00:00:02
+Multiseed full-index search: 00:01:54
+24368260 reads; of these:
+  24368260 (100.00%) were unpaired; of these:
+    24367963 (100.00%) aligned 0 times
+    204 (0.00%) aligned exactly 1 time
+    93 (0.00%) aligned >1 times
+0.00% overall alignment rate
+Time searching: 00:02:03
+Overall time: 00:02:03
+Done!
