@@ -5,6 +5,9 @@ Sample non-peaks from known dnase peaks with the same distance distribution to t
 Output: outdir/file_peaks_sorted.bed, outidir/file_nonpeaks_temp.bed
 X. Feng xfeng17@jhu.edu
 July 17, 2019
+
+Modified for Drome analysis
+April 29, 2020
 """
 
 import sys
@@ -17,7 +20,7 @@ if len(sys.argv) == 1:
 	quit()
 
 
-NUM_CHROM = 23
+NUM_CHROM = 6
 
 """
 Make a dict from chromosome name to list of TSS
@@ -38,10 +41,10 @@ def get_chr2tss(transcript_gtf_filename):
 
 		line = line.rstrip('\n')
 		cols = line.split('\t')
-		chrom_name = cols[0]
+		chrom_name = 'chr' + cols[0]
 		feature = cols[2]
 
-		if feature == "transcript":
+		if feature == "mRNA":
 
 			tss = int(cols[3])
 	
@@ -213,11 +216,12 @@ refidx.sort_values(by=["chrom"], inplace=True)
 
 n2chr = {}
 
-for i in range(21):
-	n2chr[i] = "chr" + str(i + 1)
-
-n2chr[21] = "chrX"
-n2chr[22] = "chrY"
+n2chr[0] = "chr2L"
+n2chr[1] = "chr2R"
+n2chr[2] = "chr3L"
+n2chr[3] = "chr3R"
+n2chr[4] = "chr4"
+n2chr[5] = "chrX"
 
 # chromosome name --> length
 
@@ -291,9 +295,9 @@ for index, row in peaks.iterrows():
 
                 # if sampled region is closer to another tss, repick (will bias towards smaller distances without this step)
 
-                if closed2tss < open2tss:
-                        repick = True
-                        continue
+		if closed2tss < open2tss:
+			epick = True
+			continue
 
 		# check if the random region overlaps with DHS
 		# if yes, then repick

@@ -151,7 +151,7 @@ X_test = scaler.transform(X_test)
 
 if clf_type == 'lr':
 
-	clf = LogisticRegressionCV(cv=5)
+	clf = LogisticRegressionCV(cv=5, max_iter=1000)
 	clf.fit(X_train, y_train)
 	ranks = np.reshape(clf.coef_, len(clf.coef_[0]))
 
