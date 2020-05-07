@@ -37,6 +37,8 @@ Start with `OnTheFly_2014_Drosophila.meme` first, since it is pooled from severa
 
 Use `get_motif_IDs.py` to generate motif ID list.
 
+Annotated OnTheFly motif names, continue from OVO.
+
 ## Transcription start sites
 
 Flybase release 5.57 annotations:
@@ -45,27 +47,31 @@ Flybase release 5.57 annotations:
 
 Used `predict_dnase/get_transcripts_dm.py` to extract mRNA entries and remove redudant TSS, saved as `~/dm/ref/dmel-all-no-analysis-r5.57.nonredundant-tss.gff`.
 
-## Generate Data Matrices
+## Generate Data Matrices from OntheFly motifs
 
 ```
 10-bed2mat2.sh -i dm3.fa.fai -r dm3.fa -m ../motifs/OnTheFly_2014_Drosophila.meme -d ../motifs/OnTheFly_2014_Drosophila_motif_IDs.txt -g dmel-all-no-analysis-r5.57.nonredundant-tss.gff ../dhs/bdtnpDnaseAccS5.bed ../out
-
-10-bed2mat2.sh -i dm3.fa.fai -r dm3.fa -m ../motifs/OnTheFly_2014_Drosophila.meme -d ../motifs/OnTheFly_2014_Drosophila_motif_IDs.txt -g dmel-all-no-analysis-r5.57.nonredundant-tss.gff ../dhs/bdtnpDnaseAccS9.bed ../out
-
-10-bed2mat2.sh -i dm3.fa.fai -r dm3.fa -m ../motifs/OnTheFly_2014_Drosophila.meme -d ../motifs/OnTheFly_2014_Drosophila_motif_IDs.txt -g dmel-all-no-analysis-r5.57.nonredundant-tss.gff ../dhs/bdtnpDnaseAccS10.bed ../out
-
-10-bed2mat2.sh -i dm3.fa.fai -r dm3.fa -m ../motifs/OnTheFly_2014_Drosophila.meme -d ../motifs/OnTheFly_2014_Drosophila_motif_IDs.txt -g dmel-all-no-analysis-r5.57.nonredundant-tss.gff ../dhs/bdtnpDnaseAccS11.bed ../out
-
-10-bed2mat2.sh -i dm3.fa.fai -r dm3.fa -m ../motifs/OnTheFly_2014_Drosophila.meme -d ../motifs/OnTheFly_2014_Drosophila_motif_IDs.txt -g dmel-all-no-analysis-r5.57.nonredundant-tss.gff ../dhs/bdtnpDnaseAccS14.bed ../out
 ```
+Repeat for S9/S10/S11/S14.bed
 
 `00-random_sampler2.py` was modified to account of Drome specifc details (chromsome names, number)
 
 `02-matrix_constructor.py` was modified to be compatible with fimo output column names.
 
+## Jaspar motifs
+
+```
+10-bed2mat2.sh -i dm3.fa.fai -r dm3.fa -m ../motifs/20200428_JASPAR2018_combined_matrices_23595_meme_dm_156_TFs.txt -d ../motifs/JASPAR2018_drome_motif_IDs.txt -g dmel-all-no-analysis-r5.57.nonredundant-tss.gff ../dhs/bdtnpDnaseAccS14.bed ../jaspar_out
+
+Ntrue="`wc -l < "bdtnpDnaseAccS9_peaks_matrix.tsv"`"
+11-classifier2.py -r bdtnpDnaseAccS9_all_matrix.tsv $Ntrue ../motifs/JASPAR2018_drome_motif_IDs.txt lr bdtnpDnaseAccS9_lr_results
+```
+
 ## Train logistic regression classifier
 
 ```
+Ntrue="`wc -l < "bdtnpDnaseAccS5_peaks_matrix.tsv"`"
+
 11-classifier2.py -r bdtnpDnaseAccS5_all_matrix.tsv $Ntrue ../motifs/OnTheFly_2014_Drosophila_motif_IDs.txt lr bdtnpDnaseAccS5_lr_results
 ```
 
@@ -74,3 +80,6 @@ Used `predict_dnase/get_transcripts_dm.py` to extract mRNA entries and remove re
 ```
 11-classifier2.py -r bdtnpDnaseAccS5_all_matrix.tsv $Ntrue ../motifs/OnTheFly_2014_Drosophila_motif_IDs.txt rf bdtnpDnaseAccS5_rf_results
 ```
+
+Ntrue="`wc -l < "bdtnpDnaseAccS11_peaks_matrix.tsv"`"
+11-classifier2.py -r bdtnpDnaseAccS11_all_matrix.tsv $Ntrue ../motifs/JASPAR2018_drome_motif_IDs.txt lr bdtnpDnaseAccS11_lr_results
