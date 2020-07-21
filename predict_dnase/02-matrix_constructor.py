@@ -49,10 +49,6 @@ test = 0
 
 # iterate over all motif search results
 
-### debugging
-# print fimo.head()
-# quit()
-
 for index, row in fimo.iterrows():
 
 	test += 1
