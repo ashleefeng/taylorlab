@@ -39,7 +39,7 @@ require_exes() {
     fi
   done
 }
-require_exes 10-bed2mat.sh 11-classifier.py
+require_exes 10-bed2mat.sh 11-classifier2.py
 
 FILENAME="*.bed"
 
@@ -65,7 +65,7 @@ for file in $DATA_DIR/$FILENAME; do
 		CLF='lr'
 		OUT_PREFIX="${FILE_PREFIX}_$CLF"
 
-		11-classifier.py -r $MATRIX_FILE $N_TRUE $MOTIF_LIST $CLF $OUT_PREFIX
+		11-classifier2.py -r $MATRIX_FILE $N_TRUE $MOTIF_LIST $CLF $OUT_PREFIX
 
 		if [ "$?" != "0" ]; then
 			echo -e "Error when running 11-classifier.py (lr) on $file."
@@ -74,7 +74,7 @@ for file in $DATA_DIR/$FILENAME; do
 
 		CLF='rf'
 		OUT_PREFIX="${FILE_PREFIX}_$CLF"
-		11-classifier.py -r $MATRIX_FILE $N_TRUE $MOTIF_LIST $CLF $OUT_PREFIX
+		11-classifier2.py -r $MATRIX_FILE $N_TRUE $MOTIF_LIST $CLF $OUT_PREFIX
 	
 
 		if [ "$?" != "0" ]; then
